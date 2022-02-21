@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] private Animator levelLoaderAnimator;
-    [SerializeField] private string sceneName;
-    [SerializeField] private Canvas portalTxt;
+    [SerializeField]
+    private Animator levelLoaderAnimator;
+    [SerializeField]
+    private string sceneName;
+    [SerializeField]
+    private Canvas portalTxt;
+    
     string CROSSFADE_START = "Crossfade_Start";
     string CROSSFADE_END = "Crossfade_End";
 
@@ -39,12 +43,7 @@ public class Portal : MonoBehaviour
     {
         portalTxt.enabled = false;
     }
-
-    private void Update()
-    {
-
-    }
-
+    
     private void LoadScene()
     {
         StartCoroutine(LoadLevel());

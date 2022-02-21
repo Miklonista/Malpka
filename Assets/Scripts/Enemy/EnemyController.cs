@@ -1,25 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;//trzeba dodaæ aby unity czyta³o
+using UnityEngine.AI;
 
-public class EnemyControler : MonoBehaviour
-
-{   //Zasiêg widocznoœci
-
+public class EnemyController : MonoBehaviour
+{  
     public float lookRadius = 50f;
     
     Transform target;// czy player jest w terenie
-    NavMeshAgent agent;//
-
-    // Start is called before the first frame update
+    NavMeshAgent agent;
+    
     void Start()
     {
         target = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
@@ -27,11 +23,9 @@ public class EnemyControler : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-            
         }
-             
     }
-    void OnDrawGizmosSelected()//Czerwona obrêcz
+    void OnDrawGizmosSelected()//Czerwona obrï¿½cz
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);

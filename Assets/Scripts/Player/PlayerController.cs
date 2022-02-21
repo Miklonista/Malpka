@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //referencje
-    [SerializeField] private CharacterController controller;
-    [SerializeField] private Transform cam;
+    [SerializeField]
+    private CharacterController controller;
+     
+    [SerializeField]
+    private Transform cam;
 
-    //ruch w plaszczyznie X Z
-    [SerializeField] private float speed = 6f;
+    [SerializeField]
+    private float speed = 6f;
+    
+    [SerializeField]
+    private float jumpVelocity = 2.0f;
+    
+    [SerializeField] 
+    private float jumpHeight = 2.0f;
+    
+    [SerializeField] 
+    private float g = 4 * 9.81f;  
+    
     private float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
-
-    //skok
+    private float turnSmoothVelocity;
     private float groundedTimer;
-    [SerializeField] private float jumpVelocity = 2.0f;
-    [SerializeField] private float jumpHeight = 2.0f;
-    [SerializeField] private float g = 4 * 9.81f; // wieksza grawitacja powoduje lepsza dynamike ruchu - przyspiesza predkosc skoku 
-
+    
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -26,7 +33,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // poruszanie si�
+        Movement();
+        GroundCheck();
+        Jump();
+        
+    }
+
+    private void Movement()
+    {
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
@@ -41,12 +55,26 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+    }
+    private void Jump()
+    {
+        jumpVelocity -= g * Time.deltaTime;
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (groundedTimer > 0)
+            {
+                groundedTimer = 0;
+                jumpVelocity += Mathf.Sqrt(jumpHeight * 2 * g);
+            }
+        } 
+        controller.Move(new Vector3(0f, jumpVelocity * Time.deltaTime, 0f));
+    }
 
-        //skok
+    private void GroundCheck()
+    {
         bool groundedPlayer = controller.isGrounded;
         if (groundedPlayer)
         {
-            // czas odnowienia skoku - lepiej działa 
             groundedTimer = 0.2f;
         }
         if (groundedTimer > 0)
@@ -58,26 +86,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpVelocity = 0f;
         }
-
-        //ciagle dzialanie grawitacji
-        jumpVelocity -= g * Time.deltaTime;
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            // gracz musial spasc na jakas powierzchnie, zeby moc skoczyc znowu
-            if (groundedTimer > 0)
-            {
-                // 0 dopoki znowu nie dotkniemy podloza
-                groundedTimer = 0;
-
-                // wzor na predkosc skoku w zaleznosci od wysokosci i grawitacji w naszej grze 
-                jumpVelocity += Mathf.Sqrt(jumpHeight * 2 * g);
-            }
-        }
-
-        controller.Move(new Vector3(0f, jumpVelocity * Time.deltaTime, 0f));
-        // Debug.Log(controller.isGrounded);
     }
-
 }
 
