@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 385799008650475879}
   - component: {fileID: -7606899321040429598}
   m_Layer: 0
-  m_Name: coin
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 88a5328a7d156ce4fb110e38c2b65ba0, type: 2}
+  - {fileID: 2100000, guid: 3533424d146683b48a8e8c60aebd0d9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

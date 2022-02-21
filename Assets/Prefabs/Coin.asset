@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78d7351ff60fd34bbd16109f041425d, type: 3}
   m_Name: Coin
   m_EditorClassIdentifier: 
-  points: 5
+  points: 10
   coinMaterial: {fileID: 2100000, guid: 3533424d146683b48a8e8c60aebd0d9e, type: 2}
