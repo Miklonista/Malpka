@@ -5,16 +5,14 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public ItemSO coin;
-    private int coinValue = 0;
-    private void Start()
-    {
-        coinValue = coin.points;
-    }
+    
+
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            PointsManager.Instance.AddPoint(coinValue);
+            PointsManager.Instance.AddPoint(coin);
             GameManager.Instance.test();
             Destroy(gameObject);
         }
