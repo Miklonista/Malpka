@@ -20,7 +20,7 @@
 + System walki (teraz będziemy mogli się rozprawić z naszym wrogiem za ciągłe gonienie)
 + Menu po śmierci (gdyby to jednak on się z nami rozprawił...)
 + Tabela z wynikami
-+ Świat pełen przepięknych widoków (dobrze, że piękno jest subiektywny)
++ Świat pełen przepięknych widoków (dobrze, że piękno jest subiektywne)
 + Animacje postaci
 + Nowe, bardziej realistyczne modele (do tego czasu jesteśmy wyznawcami kubizmu)
 + Budka do teleportacji lepsza niż w Doktor Who)
@@ -29,7 +29,7 @@
 
 ### Tak prezentuje się gra na dzień dzisiejszy:
   
-https://youtu.be/Fe0eQyQAJnA
+https://www.youtube.com/watch?v=4DV3cVcTIA8
 
 ### Tutaj dokładny plan rozwoju projektu:
 
