@@ -2,7 +2,11 @@
 
 ## Robimy grę w Unity.
 
-**Małpka** to platformówka 3D. Celen gry jest odzyskanie bananów skradzionych Małpce przez Bandę Goryli, pod drodzę czeka nas wiele wyzwań, jednak Małpce bardzo zależy, więc nie poddawajcie się, rozprawcie się z Gorylami i zbierzcie jak najwięcej bananów *fabuła może ulec zmianie, gdyż lore jest intensywnie rozbudowywane*
+**Małpka** to platformówka 3D. Celen gry jest odzyskanie bananów skradzionych Małpce przez Bandę Goryli, pod drodzę czeka nas wiele wyzwań, jednak Małpce bardzo zależy, więc nie poddawajcie się, rozprawcie się z Gorylami i zbierzcie jak najwięcej bananów *fabuła może ulec zmianie, gdyż lore jest intensywnie rozbudowywane.*
+
+### Kadr z gry. Na zdjęciu tytułowa Małpka (różowa) i Goryl (niebieski).
+![image](https://user-images.githubusercontent.com/62513514/155130247-78daea37-9b59-446a-b8c5-829a69b30f33.png)
+
 
 ### Nasza gra zawiera: 
 + System poruszania się postaci (można skoczyć w przepaść)
