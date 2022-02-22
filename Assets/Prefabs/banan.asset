@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Banan
   m_EditorClassIdentifier: 
   points: 5
-  coinMaterial: {fileID: 2100000, guid: 88a5328a7d156ce4fb110e38c2b65ba0, type: 2}
+  coinMaterial: {fileID: 2100000, guid: 7fa3a6177e2137943a3766eeb52999b9, type: 2}
+  starPoints: 0
