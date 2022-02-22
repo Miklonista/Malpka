@@ -30,3 +30,7 @@
 ### Tak prezentuje się gra na dzień dzisiejszy:
   
 https://youtu.be/Fe0eQyQAJnA
+
+### Tutaj dokładny plan rozwoju projektu:
+
+https://trello.com/b/CshUXENV/gra
