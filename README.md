@@ -8,7 +8,7 @@
 ![image](https://user-images.githubusercontent.com/62513514/155392906-21f9083f-0244-441f-8cae-f9e5d28d903f.png)
 
 ### Kadr z gry. Na zdjęciu tytułowa Małpka (różowa) i Goryl (niebieski).
-![image](https://user-images.githubusercontent.com/62513514/155130247-78daea37-9b59-446a-b8c5-829a69b30f33.png)
+![image](https://user-images.githubusercontent.com/62513514/155393512-6c90a32a-9008-4ef9-a29e-2894d8ea3ae3.png)
 
 ### Nasza gra zawiera: 
 + System poruszania się postaci (można skoczyć w przepaść)
