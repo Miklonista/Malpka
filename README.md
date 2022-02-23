@@ -23,7 +23,7 @@
 + Świat pełen przepięknych widoków (dobrze, że piękno jest subiektywne)
 + Animacje postaci
 + Nowe, bardziej realistyczne modele (do tego czasu jesteśmy wyznawcami kubizmu)
-+ Budka do teleportacji lepsza niż w Doktor Who)
++ Budka do teleportacji (lepsza niż w Doktor Who)
 + Mnóstwo przedmiotów
 
 
