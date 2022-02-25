@@ -6,7 +6,8 @@ using UnityEngine;
 public class PointsManager : MonoBehaviour
 {
     private int points;
-  
+    
+    //TODO: ZROBIC SKRYPT UI I TAM TYM ZARZADZAC
     [SerializeField]private TextMeshProUGUI interfacePoints;
     [SerializeField]private TextMeshProUGUI interfaceStarPoints;
 

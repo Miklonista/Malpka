@@ -1,62 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
     [SerializeField]
-    private Animator levelLoaderAnimator;
+    private Canvas portalTxt;
+
     [SerializeField]
     private string sceneName;
-    [SerializeField]
-    private Canvas portalTxt;
-    
-    string CROSSFADE_START = "Crossfade_Start";
-    string CROSSFADE_END = "Crossfade_End";
+
+    private LevelLoader levelLoader;
 
     private void Start()
     {
-        portalTxt.enabled = false;
+        SetPortalTxtVisibility(false);
+        levelLoader = GetComponent<LevelLoader>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Player")
-        {
-            portalTxt.enabled = true;
-        }
+        if (other.name == "Player") SetPortalTxtVisibility(true);;
     }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == "Player")
+        if (other.name != "Player") return;
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("E");
-                 LoadScene();
-            }
+            Debug.Log("E");
+            levelLoader.LoadScene(sceneName);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        portalTxt.enabled = false;
-    }
-    
-    private void LoadScene()
-    {
-        StartCoroutine(LoadLevel());
+        SetPortalTxtVisibility(false);
     }
 
-    IEnumerator LoadLevel()
-    {
-        levelLoaderAnimator.Play(CROSSFADE_START);
-
-        yield return new WaitForSeconds(1f);
-
-        levelLoaderAnimator.Play(CROSSFADE_END);
-
-        SceneManager.LoadScene(sceneName);
-    }
+    void SetPortalTxtVisibility(bool state) => portalTxt.enabled = state;
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b78d7351ff60fd34bbd16109f041425d, type: 3}
-  m_Name: Stars
+  m_Name: Star
   m_EditorClassIdentifier: 
   points: 0
   coinMaterial: {fileID: 2100000, guid: 438555f1381903448a7ab5e552ca2bbc, type: 2}

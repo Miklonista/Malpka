@@ -6,14 +6,11 @@ public class Coin : MonoBehaviour
 {
     public ItemSO coin;
     
-
-    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             PointsManager.Instance.AddPoint(coin);
-            GameManager.Instance.test();
             Destroy(gameObject);
         }
         else
@@ -21,6 +18,5 @@ public class Coin : MonoBehaviour
             Debug.Log("Zebra³ to, zebra³");
         }
     }
-        
 }
 
