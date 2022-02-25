@@ -2,20 +2,23 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour
+public abstract class LevelLoader : MonoBehaviour
     {
         [SerializeField]
         private Animator levelLoaderAnimator;
+        
+        [SerializeField]
+        private string sceneName;
 
         string CROSSFADE_START = "Crossfade_Start";
         string CROSSFADE_END = "Crossfade_End";
         
-        public void LoadScene(string sceneName)
+        public void LoadScene()
         {
-            StartCoroutine(LoadLevel(sceneName));
+            StartCoroutine(LoadLevel());
         }
 
-        IEnumerator LoadLevel(string sceneName)
+        protected virtual IEnumerator LoadLevel()
         {
             levelLoaderAnimator.Play(CROSSFADE_START);
 

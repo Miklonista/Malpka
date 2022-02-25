@@ -4,16 +4,13 @@ public class Portal : MonoBehaviour
 {
     [SerializeField]
     private Canvas portalTxt;
-
-    [SerializeField]
-    private string sceneName;
-
+    
     private LevelLoader levelLoader;
 
     private void Start()
     {
         SetPortalTxtVisibility(false);
-        levelLoader = GetComponent<LevelLoader>();
+        levelLoader = GetComponent<PortalLevelLoader>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +25,7 @@ public class Portal : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("E");
-            levelLoader.LoadScene(sceneName);
+            levelLoader.LoadScene();
         }
     }
 
