@@ -25,6 +25,7 @@ public class PointsManager : MonoBehaviour
             Instance = this;
         }
     }
+    
     private void Start()
     {
         interfacePoints.text = points.ToString();
