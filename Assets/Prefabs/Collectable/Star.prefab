@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4269775092772717700}
   - component: {fileID: 2648457397677994648}
   - component: {fileID: 9220663708258937339}
-  - component: {fileID: -5541797110790519428}
+  - component: {fileID: -5035834637349761055}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457921c70a7ca60458d1124ff25b0246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 93f6c4147a43172458dba2ed9e6dbcad, type: 2}
---- !u!114 &-5541797110790519428
+  coinData: {fileID: 11400000, guid: 93f6c4147a43172458dba2ed9e6dbcad, type: 2}
+--- !u!114 &-5035834637349761055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7596322956899822057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f42505a63ca7e4e9a40d4a362bc44b, type: 3}
+  m_Script: {fileID: 11500000, guid: e15ebddb6ec247bd8154a5a23bfeb74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 93f6c4147a43172458dba2ed9e6dbcad, type: 2}

@@ -8,19 +8,19 @@ public class EndGame : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent onGameEnd;
-
     [SerializeField]
     private GameObject canvas;
+    
     public void Setup()
     {
         canvas.SetActive(true);
     }
+    
     public void ChangeScene()
     {
         SceneManager.LoadScene(1);
 
     }
-
     public void Menu()
     {
         SceneManager.LoadScene(0);   // pe³na nazwa zamiast indeksu

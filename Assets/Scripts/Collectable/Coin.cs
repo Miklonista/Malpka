@@ -2,21 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin : Collectable
 {
-    public ItemSO coin;
-    
-    private void OnTriggerEnter(Collider other)
+    public ItemSO coinData;
+
+    protected override void OnTrigger()
     {
-        if (other.CompareTag("Player"))
-        {
-            PointsManager.Instance.AddPoint(coin);
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Zebra³ to, zebra³");
-        }
+        PointsManager.Instance.Points+= coinData.points;
+        Destroy(gameObject);
     }
 }
 

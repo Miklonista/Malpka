@@ -6,19 +6,14 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private CharacterController controller;
-     
     [SerializeField]
     private Transform cam;
-
     [SerializeField]
     private float speed = 6f;
-    
     [SerializeField]
     private float jumpVelocity = 2.0f;
-    
     [SerializeField] 
     private float jumpHeight = 2.0f;
-    
     [SerializeField] 
     private float g = 4 * 9.81f;  
     

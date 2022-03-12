@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 528565517370061679}
   - component: {fileID: 528565517370061680}
   - component: {fileID: 528565517370061681}
-  - component: {fileID: 528565517370061683}
   - component: {fileID: 528565517370061682}
+  - component: {fileID: -1731448204910170784}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Untagged
@@ -98,19 +98,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &528565517370061683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528565517370061684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f42505a63ca7e4e9a40d4a362bc44b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 610897f39acf0314fa321b84b5ea45df, type: 2}
 --- !u!114 &528565517370061682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,4 +110,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457921c70a7ca60458d1124ff25b0246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 610897f39acf0314fa321b84b5ea45df, type: 2}
+  coinData: {fileID: 11400000, guid: 610897f39acf0314fa321b84b5ea45df, type: 2}
+--- !u!114 &-1731448204910170784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528565517370061684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8d2efda15b45979b597c0dc202d05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bananaData: {fileID: 11400000, guid: 610897f39acf0314fa321b84b5ea45df, type: 2}

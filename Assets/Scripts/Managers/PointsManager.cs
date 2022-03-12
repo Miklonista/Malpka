@@ -2,18 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PointsManager : MonoBehaviour
 {
-    private int points;
-    
-    //TODO: ZROBIC SKRYPT UI I TAM TYM ZARZADZAC
-    [SerializeField]private TextMeshProUGUI interfacePoints;
-    [SerializeField]private TextMeshProUGUI interfaceStarPoints;
-
     public static PointsManager Instance;
-    private int starPoints;
+    
+    #region serialized fields
 
+     [SerializeField]
+        private TextMeshProUGUI pointsTMP;
+        [SerializeField]
+        private TextMeshProUGUI starPointsTMP;
+
+    #endregion
+    
+    #region fields
+
+    private int starPoints;
+    private int points;
+
+    #endregion
+
+    #region properties
+    public int StarPoints
+    {
+        get => starPoints;
+        set
+        {
+            starPoints = value;
+            starPointsTMP.text = $"Star Points: {starPoints}";
+        }
+    }
+
+    public int Points
+    {
+        get => points;
+        set
+        {
+            points = value;
+            pointsTMP.text = $"Points: {points}";
+        }
+    }
+    #endregion
+    
     private void Awake()
     {
         if (Instance != null)
@@ -28,23 +60,8 @@ public class PointsManager : MonoBehaviour
     
     private void Start()
     {
-        interfacePoints.text = points.ToString();
-        interfaceStarPoints.text = starPoints.ToString();
+        StarPoints = 0;
+        Points = 0;
     }
-
-    public void AddPoint(ItemSO value)
-    {
-        points+=value.points;
-        starPoints += value.starPoints;
-        interfacePoints.text = "Points " + points.ToString();
-        interfaceStarPoints.text = "Star Points " + starPoints.ToString();
-        if (starPoints == 3)
-        {
-            Debug.Log("Przechodzisz na nastêpny poziom");
-        }    
-    }
-
-    
-        
 }
 

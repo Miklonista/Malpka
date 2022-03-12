@@ -85,7 +85,7 @@ CapsuleCollider:
   m_Radius: 1.4640291
   m_Height: 2.9280581
   m_Direction: 1
-  m_Center: {x: -0.48854947, y: -7.0000005, z: 0.024520356}
+  m_Center: {x: -0.48854947, y: -7.0000005, z: 0}
 --- !u!54 &3894675889908548813
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b9450d51a92384d834bca80e172368, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b9450d51a92384d834bca80e172368, type: 3}
       propertyPath: m_LocalRotation.x
@@ -147,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b9450d51a92384d834bca80e172368, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b9450d51a92384d834bca80e172368, type: 3}
       propertyPath: m_LocalRotation.z
@@ -159,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b9450d51a92384d834bca80e172368, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b9450d51a92384d834bca80e172368, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

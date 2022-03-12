@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f42505a63ca7e4e9a40d4a362bc44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 36b5fc5a57a0df14190c55dd2d5a6d07, type: 2}
+  coinData: {fileID: 11400000, guid: 36b5fc5a57a0df14190c55dd2d5a6d07, type: 2}
 --- !u!114 &-7606899321040429598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457921c70a7ca60458d1124ff25b0246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 36b5fc5a57a0df14190c55dd2d5a6d07, type: 2}
+  coinData: {fileID: 11400000, guid: 36b5fc5a57a0df14190c55dd2d5a6d07, type: 2}

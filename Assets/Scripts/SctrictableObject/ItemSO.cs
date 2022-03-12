@@ -7,7 +7,8 @@ public class ItemSO : ScriptableObject
 {
     public int points;
     public Material coinMaterial;
-    public int starPoints;  
+   // public int starPoints;  
+   //zakomentowa³em to, bo w sumie raczej kazda gwiazdka powinna dawac 1 punkt, a do tego nie potrzebujemy tworzyc ItemSO osobnego ~Wojtek
     // Punkty przyznawane za zebranie obiektu Star. Trzy punkty pozwalaj¹ na przejœcie do nastêpnego poziomu.
     //todo: enum class type {coin, star, banana}, points -> value
 }
