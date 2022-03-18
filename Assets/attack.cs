@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class attack : MonoBehaviour
+public class attack : Interactable
 {
     private void OnCollisionEnter(Collision collision)
     {

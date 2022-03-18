@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : Collectable
+public class Coin : Interactable
 {
     public ItemSO coinData;
 

@@ -17,9 +17,5 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-
-    public void test()
-    {
-        Debug.Log("a");
-    }
 }
+

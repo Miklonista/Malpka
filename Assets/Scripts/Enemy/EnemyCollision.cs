@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCollision : MonoBehaviour
+public class EnemyCollision : Interactable
 {
-   
+   protected override void OnCollisionEnter(Collision collision)
+   { 
+       if (!collision.collider.CompareTag("Player")) return;
+     collision.collider.SendMessage("TakeDamage", 20);
+   }
 }

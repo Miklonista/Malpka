@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private CharacterController controller;
-    [SerializeField]
-    private Transform cam;
-    [SerializeField]
-    private float speed = 6f;
-    [SerializeField]
-    private float jumpVelocity = 2.0f;
-    [SerializeField] 
-    private float jumpHeight = 2.0f;
-    [SerializeField] 
-    private float g = 4 * 9.81f;  
-    
-    private float turnSmoothTime = 0.1f;
-    private float turnSmoothVelocity;
-    private float groundedTimer;
+    #region sfields
+
+        [SerializeField]
+        private CharacterController controller;
+        [SerializeField]
+        private Transform cam;
+        [SerializeField]
+        private float speed = 6f;
+        [SerializeField]
+        private float jumpVelocity = 2.0f;
+        [SerializeField] 
+        private float jumpHeight = 2.0f;
+        [SerializeField] 
+        private float g = 4 * 9.81f;  
+
+    #endregion
+
+    #region fields
+
+        private float turnSmoothTime = 0.1f;
+        private float turnSmoothVelocity;
+        private float groundedTimer;
+
+    #endregion
+
     
     private void Start()
     {
@@ -62,7 +71,6 @@ public class PlayerController : MonoBehaviour
         } 
         controller.Move(new Vector3(0f, jumpVelocity * Time.deltaTime, 0f));
     }
-
     private void GroundCheck()
     {
         bool groundedPlayer = controller.isGrounded;

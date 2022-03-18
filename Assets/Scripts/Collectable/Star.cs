@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Star : Collectable
+public class Star : Interactable
 {
     protected override void OnTrigger()
     {

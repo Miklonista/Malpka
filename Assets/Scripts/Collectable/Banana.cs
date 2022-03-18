@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Banana : Collectable
+public class Banana : Interactable
 {
     public ItemSO bananaData;
 

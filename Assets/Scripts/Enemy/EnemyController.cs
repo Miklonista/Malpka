@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     
     void Start()
     {
-        animator = GetComponent<Animator>();
+         animator = GetComponent<Animator>();
         target = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
 

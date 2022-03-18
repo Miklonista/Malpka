@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public abstract class Collectable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
     protected virtual void OnTriggerEnter(Collider other)
     {
