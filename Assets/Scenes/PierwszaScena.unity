@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457921c70a7ca60458d1124ff25b0246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 425f68052192d4b4b938269077b30cce, type: 2}
+  coinData: {fileID: 0}
 --- !u!114 &707409579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f42505a63ca7e4e9a40d4a362bc44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 11400000, guid: 425f68052192d4b4b938269077b30cce, type: 2}
+  coinData: {fileID: 0}
 --- !u!65 &707409580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730108934
 GameObject:
@@ -1773,8 +1773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc371088668e450438d2ec40cb4f37df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interfacePoints: {fileID: 1370951806}
-  interfaceStarPoints: {fileID: 1057052256}
+  pointsTMP: {fileID: 0}
+  starPointsTMP: {fileID: 0}
 --- !u!4 &1055337498
 Transform:
   m_ObjectHideFlags: 0
@@ -1789,17 +1789,6 @@ Transform:
   m_Father: {fileID: 1611129385}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1057052256 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3484109236866868705, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
-  m_PrefabInstance: {fileID: 3484109236380251009}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1068289131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2057,17 +2046,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8163196977363051587, guid: d801b3a1370d77f42933dc863f22ca4d, type: 3}
   m_PrefabInstance: {fileID: 1451617790}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1370951806 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3484109237178409983, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
-  m_PrefabInstance: {fileID: 3484109236380251009}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1418237858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2462,7 +2440,7 @@ Transform:
   m_LocalScale: {x: 19.147755, y: 1, z: 22.708027}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1556980402
 PrefabInstance:
@@ -3852,7 +3830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1494150991980460134, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1494150991980460134, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3946,6 +3924,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d4295bcf76d3b1248a945679fdd1e5af, type: 2}
+    - target: {fileID: 5859673836244038278, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182412458203698685, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
 --- !u!1001 &2935280050157724013
@@ -4026,7 +4012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3484109236244551918, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3484109236244551918, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
       propertyPath: m_AnchorMax.x
