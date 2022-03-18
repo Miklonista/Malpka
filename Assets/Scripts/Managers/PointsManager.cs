@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 public class PointsManager : MonoBehaviour
 {
     public static PointsManager Instance;
-    
+
     #region serialized fields
 
-     [SerializeField]
+    [SerializeField]
         private TextMeshProUGUI pointsTMP;
         [SerializeField]
         private TextMeshProUGUI starPointsTMP;
@@ -19,8 +19,8 @@ public class PointsManager : MonoBehaviour
     
     #region fields
 
-    private int starPoints;
-    private int points;
+    private int starPoints = 0;
+    private int points = 0;
 
     #endregion
 
