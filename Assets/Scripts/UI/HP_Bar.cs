@@ -9,11 +9,12 @@ public class HP_Bar : MonoBehaviour
     public bool coolingDown;
     public float waitTime = 30.0f;
     
-    void Update()
+    public void Update()
     {
         if (coolingDown == true)
         {
             cooldown.fillAmount -= 1.0f / waitTime * Time.deltaTime;
         }
     }
+
 }
