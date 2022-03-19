@@ -8,7 +8,7 @@ public class attack : Interactable
     {
         if (collision.gameObject.GetComponent<HPManager>())
         {
-            collision.gameObject.GetComponent<HPManager>().TakeDamage(2);
+            collision.collider.SendMessage("TakeDamage", 20);
         }
     }
 }
