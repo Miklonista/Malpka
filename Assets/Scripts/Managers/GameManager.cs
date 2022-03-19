@@ -5,7 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour 
 {
     public static GameManager Instance;
-    
+
+    [SerializeField]
+    private Canvas deathScreen;
+
+   
     void Awake()
     {
         if (Instance != null)
@@ -18,6 +22,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void EnableDeathScreen()
+    {
+        deathScreen.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+    }
 }
 

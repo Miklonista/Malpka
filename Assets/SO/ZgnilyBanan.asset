@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78d7351ff60fd34bbd16109f041425d, type: 3}
   m_Name: ZgnilyBanan
   m_EditorClassIdentifier: 
-  points: -2
+  points: -20
   coinMaterial: {fileID: 2100000, guid: d4295bcf76d3b1248a945679fdd1e5af, type: 2}
-  starPoints: 0

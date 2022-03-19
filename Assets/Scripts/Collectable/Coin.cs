@@ -8,7 +8,7 @@ public class Coin : Interactable
 
     protected override void OnTrigger()
     {
-        PointsManager.Instance.Points+= coinData.points;
+        PointsManager.Instance.Points += coinData.points;
         Destroy(gameObject);
     }
 }

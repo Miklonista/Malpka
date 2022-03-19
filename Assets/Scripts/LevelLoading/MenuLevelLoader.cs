@@ -2,7 +2,11 @@ using UnityEngine;
 
     public class MenuLevelLoader : LevelLoader
     {
-        public void QuitGame()
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void QuitGame()
         {
             Application.Quit();
         }

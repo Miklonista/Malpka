@@ -4,9 +4,10 @@ public class Banana : Interactable
 {
     public ItemSO bananaData;
 
-    protected override void OnTrigger()
+    protected override void OnTriggerEnter(Collider other)
     {
-        //TODO: stworzyc system HP i zrobic zeby ten banan dzialal
+        if (!other.CompareTag("Player")) return;
+        other.GetComponent<HealthSystem>().Heal(bananaData.points);
         Destroy(gameObject);
     }
 }

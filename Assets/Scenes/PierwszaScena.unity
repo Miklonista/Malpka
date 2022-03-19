@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761d493d90e00d744b19bbd512d8b825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreen: {fileID: 1020627760}
 --- !u!4 &39724726
 Transform:
   m_ObjectHideFlags: 0
@@ -566,7 +567,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376065127}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.3892767
   m_Height: 9.926469
@@ -629,6 +630,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &376065135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376065127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cdf171a78eb254d9f93d35a4cb88e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &384140873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3484109237178409981, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
@@ -1219,8 +1232,8 @@ GameObject:
   - component: {fileID: 707409582}
   - component: {fileID: 707409581}
   - component: {fileID: 707409580}
-  - component: {fileID: 707409579}
   - component: {fileID: 707409578}
+  - component: {fileID: 707409579}
   m_Layer: 0
   m_Name: ZgnilyBanan
   m_TagString: Untagged
@@ -1250,10 +1263,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 707409577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f42505a63ca7e4e9a40d4a362bc44b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f8d2efda15b45979b597c0dc202d05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinData: {fileID: 11400000, guid: 425f68052192d4b4b938269077b30cce, type: 2}
+  bananaData: {fileID: 11400000, guid: 425f68052192d4b4b938269077b30cce, type: 2}
 --- !u!65 &707409580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2248,6 +2261,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1307081137, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3127793892273318376, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
       propertyPath: cam
       value: 
@@ -2756,7 +2773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94d250fd29942488e6546086f5800de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoaderAnimator: {fileID: 0}
   sceneName: PierwszaScena
 --- !u!1 &1571626393
 GameObject:
@@ -3010,6 +3026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
+  cooldown: {fileID: 1557480479}
 --- !u!1001 &1800676434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3426,7 +3443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WYGRA\u0141E\u015A"
+  m_text: "Przegra\u0142e\u015B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4238,6 +4255,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7307443698346244881, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307443698346244881, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
       propertyPath: m_Acceleration
       value: 100
       objectReference: {fileID: 0}
@@ -4465,6 +4486,10 @@ PrefabInstance:
       propertyPath: cooldown
       value: 
       objectReference: {fileID: 1557480479}
+    - target: {fileID: 3484109236840941116, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3484109236840941116, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
       propertyPath: coolingDown
       value: 0

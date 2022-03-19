@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public abstract class LevelLoader : MonoBehaviour
     {
-        [SerializeField]
-        private Animator levelLoaderAnimator;
+        //[SerializeField]
+        //private Animator levelLoaderAnimator;
         
         [SerializeField]
         private string sceneName;
@@ -20,12 +20,13 @@ public abstract class LevelLoader : MonoBehaviour
 
         protected virtual IEnumerator LoadLevel()
         {
-            levelLoaderAnimator.Play(CROSSFADE_START);
+            //levelLoaderAnimator.Play(CROSSFADE_START);
 
-            yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(1f);
 
-            levelLoaderAnimator.Play(CROSSFADE_END);
+            //levelLoaderAnimator.Play(CROSSFADE_END);
 
             SceneManager.LoadScene(sceneName);
+            yield break;
         }
     }
