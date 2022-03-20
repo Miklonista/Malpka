@@ -16,6 +16,7 @@ public abstract class LevelLoader : MonoBehaviour
         public void LoadScene()
         {
             StartCoroutine(LoadLevel());
+            Time.timeScale = 1;
         }
 
         protected virtual IEnumerator LoadLevel()

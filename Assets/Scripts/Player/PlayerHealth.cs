@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : HealthSystem
 {
-    public Image cooldown;
+    [SerializeField]
+    private Image hpBarImage;
     
     protected override float HP 
     { 
@@ -11,7 +12,7 @@ public class PlayerHealth : HealthSystem
         set 
         { 
             base.HP = value;
-            cooldown.fillAmount = (HP / maxHP);
+            hpBarImage.fillAmount = (HP / maxHP);
            /* Debug.Log(HP);
             Debug.Log(cooldown.fillAmount);
             Debug.Log(maxHP);*/
@@ -26,5 +27,6 @@ public class PlayerHealth : HealthSystem
     {
         Debug.Log("œmieræ");
         GameManager.Instance.EnableDeathScreen();
+
     }
 }

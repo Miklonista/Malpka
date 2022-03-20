@@ -7,6 +7,6 @@ public class EnemyCollision : Interactable
    protected override void OnCollisionEnter(Collision collision)
    { 
        if (!collision.collider.CompareTag("Player")) return;
-     collision.collider.SendMessage("TakeDamage", 20);
+     collision.collider.GetComponent<HealthSystem>().TakeDamage(20);
    }
 }
