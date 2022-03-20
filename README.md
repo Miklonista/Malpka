@@ -15,8 +15,8 @@ Nie dotykaj narkotyków bo cię kur[]a zmiotą z planszy
 + System poruszania się postaci (można skoczyć w przepaść)
 + System punktowy (gra sama liczy punkty, nie trzeba zapisywać na kartce)
 + Ściany, o które można sobie nabić guza (lepiej załóż kask, a najlepiej pełną zbroje płytową)
-+ Przeciwnika, który nas ciągle goni i może zabić (na razie nie może, ale usilnie się stara)
-+ Pasek życia (w planach jest system obrażeń)
++ Przeciwnika, który nas ciągle goni i może zabić (mocno nas bije i nie odpuszcza, trzeba umieć szybko biegać)
++ Pasek życia (spada i rośnie - magia jakaś)
 + Menu główne (w paru grach jest, więc w naszej też będzie)
 + Realistyczne modele postaci (osadzone w pewnych stylu graficznym)
 
