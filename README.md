@@ -1,6 +1,6 @@
 # Malpka
 
-## Robimy grę w Unity.
+## Robimy grę w Unity - Dark Souls w wersji low polly mario-like platformer.
 
 **Małpka** to platformówka 3D. Celen gry jest odzyskanie bananów skradzionych Małpce przez Bandę Goryli, pod drodzę czeka nas wiele wyzwań, jednak Małpce bardzo zależy, więc nie poddawajcie się, rozprawcie się z Gorylami i zbierzcie jak najwięcej bananów *fabuła może ulec zmianie, gdyż lore jest intensywnie rozbudowywane.*
 
