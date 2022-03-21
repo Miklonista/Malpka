@@ -9,6 +9,7 @@
 
 ### Kadr z gry. Na zdjęciu tytułowa Małpka (mała z tyłu) i Goryl (większy z przodu - przez to, że brał srogie piguły wygląda jak wygląda).
 ![image](https://user-images.githubusercontent.com/62513514/159112280-fa3778b3-788c-4a03-8e0a-dea3244e7c46.png)
+
 Nie dotykaj narkotyków bo cię kur[]a zmiotą z planszy
 
 ### Nasza gra zawiera: 
