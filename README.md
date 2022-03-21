@@ -19,6 +19,7 @@ Nie dotykaj narkotyków bo cię kur[]a zmiotą z planszy
 + Pasek życia (spada i rośnie - magia jakaś)
 + Menu główne (w paru grach jest, więc w naszej też będzie)
 + Realistyczne modele postaci (osadzone w pewnych stylu graficznym)
++ Dźwięk w tle (melodie napisaną przez sławnego gruźlika)
 
 ### W grze niedługo pojawi się:
 + System walki (teraz będziemy mogli się rozprawić z naszym wrogiem za ciągłe gonienie)
@@ -28,6 +29,7 @@ Nie dotykaj narkotyków bo cię kur[]a zmiotą z planszy
 + Animacje postaci
 + Budka do teleportacji (lepsza niż w Doktor Who)
 + Mnóstwo przedmiotów
++ Wiele dźwięków wszystkiego
 
 
 ### Tak prezentuje się gra na dzień dzisiejszy (powoli zaczyna zmieniać się w horror):
