@@ -8,8 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Canvas deathScreen;
-
-   
+    
     void Awake()
     {
         if (Instance != null)
