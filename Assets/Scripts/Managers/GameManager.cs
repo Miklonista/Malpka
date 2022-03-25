@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
     public static GameManager Instance;
-
+    
     [SerializeField]
     private Canvas deathScreen;
     
@@ -26,6 +25,11 @@ public class GameManager : MonoBehaviour
         deathScreen.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
+    }
+
+    public void LoadNewScene(string sceneName)
+    {
+       SceneManager.LoadScene(sceneName);
     }
 }
 

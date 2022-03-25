@@ -3,5 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour
-{   private void Awake() => DontDestroyOnLoad(gameObject);
+{
+    [SerializeField] 
+    private List<GameObject> objectsToKeep;
+
+    private void Awake()
+    {
+        foreach (var obj in objectsToKeep)
+        {
+            DontDestroyOnLoad(obj);
+        }
+    }
 }
