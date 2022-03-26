@@ -19,17 +19,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-
     public void EnableDeathScreen()
     {
         deathScreen.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
     }
-
-    public void LoadNewScene(string sceneName)
+    public void LoadScene(string sceneName)
     {
        SceneManager.LoadScene(sceneName);
+       Time.timeScale = 1;
     }
 }
 

@@ -211,8 +211,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 90705042}
+  - component: {fileID: 90705043}
   m_Layer: 0
-  m_Name: EndGame
+  m_Name: DeathScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,6 +234,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &90705043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90705041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4f8173772ce7b42a688ca6c5c7dc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &160272577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4211209490062592161, guid: 610ed513abd462245a7cec954d0876de, type: 3}
@@ -479,7 +492,8 @@ GameObject:
   m_Component:
   - component: {fileID: 325101898}
   - component: {fileID: 325101899}
-  m_Layer: 0
+  - component: {fileID: 325101900}
+  m_Layer: 6
   m_Name: EnemyHeadCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325101897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.76, z: 4.22}
+  m_LocalPosition: {x: 0.22, y: 4.53, z: 4.22}
   m_LocalScale: {x: 3.3247817, y: 0.2082, z: 3.2392433}
   m_Children: []
   m_Father: {fileID: 17098493}
@@ -508,11 +522,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325101897}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &325101900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325101897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59b1981bd894405bcbededc89cb554c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &336828921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,11 +1240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5197998417719531172, guid: 185ad626cd7b50c4c9bdec95e0de5cdf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.57221305
+      value: 0.572213
       objectReference: {fileID: 0}
     - target: {fileID: 5197998417719531172, guid: 185ad626cd7b50c4c9bdec95e0de5cdf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.080868445
+      value: 0.08086844
       objectReference: {fileID: 0}
     - target: {fileID: 5197998417719531172, guid: 185ad626cd7b50c4c9bdec95e0de5cdf, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1226,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5197998417719531172, guid: 185ad626cd7b50c4c9bdec95e0de5cdf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.11420227
+      value: -0.11420228
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 185ad626cd7b50c4c9bdec95e0de5cdf, type: 3}
@@ -2011,9 +2037,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 90705043}
+        m_TargetAssemblyTypeName: DeathScreen, Assembly-CSharp
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2199,7 +2225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1307081137, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
       propertyPath: m_Height
-      value: 15.68692
+      value: 15.698746
       objectReference: {fileID: 0}
     - target: {fileID: 1307081137, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
       propertyPath: m_Radius
@@ -2211,7 +2237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1307081137, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
       propertyPath: m_Center.y
-      value: -0.62056935
+      value: -0.6264821
       objectReference: {fileID: 0}
     - target: {fileID: 1307081137, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
       propertyPath: m_Center.z
@@ -2968,7 +2994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff74538f7c24984a174f0bf321dcaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 10000
   hpBarImage: {fileID: 1557480479}
 --- !u!1001 &1800676434
 PrefabInstance:
@@ -3140,9 +3166,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuLevelLoader, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 90705043}
+        m_TargetAssemblyTypeName: DeathScreen, Assembly-CSharp
+        m_MethodName: QuitToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4081,6 +4107,10 @@ PrefabInstance:
     - target: {fileID: 376065129, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
       propertyPath: m_Center.z
       value: 1.829746
+      objectReference: {fileID: 0}
+    - target: {fileID: 376065136, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1494150991980460134, guid: db70e50164950e44da21816ad7c07fbe, type: 3}
       propertyPath: m_RootOrder

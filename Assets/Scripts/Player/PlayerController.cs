@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight = 2.0f;
     [SerializeField] 
     private float g = 4 * 9.81f;
-
+    
     #endregion
 
     #region fields
@@ -24,13 +24,15 @@ public class PlayerController : MonoBehaviour
     private readonly float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     private float groundedTimer;
-
+    private Rigidbody rb;
     #endregion
 
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        rb = GetComponent<Rigidbody>();
+        GameEvents.Instance.onEnemyHeadTriggerEnter += PlayerBounce;
     }
 
     private void Update()
@@ -70,6 +72,10 @@ public class PlayerController : MonoBehaviour
         controller.Move(new Vector3(0f, jumpVelocity * Time.deltaTime, 0f));
     }
 
+    private void PlayerBounce()
+    {
+        rb.AddForce(1000f*transform.up, ForceMode.Force);
+    }
     private void GroundCheck()
     {
         var groundedPlayer = controller.isGrounded;

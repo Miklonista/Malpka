@@ -21,6 +21,6 @@ public class PortalEnter : Interactable
     }
     private void TeleportPlayer()
     {
-        GameManager.Instance.LoadNewScene(sceneToLoad);
+        GameManager.Instance.LoadScene(sceneToLoad);
     }
 }
