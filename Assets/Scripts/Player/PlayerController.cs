@@ -4,21 +4,23 @@ public class PlayerController : MonoBehaviour
 {
     #region sfields
 
-    [SerializeField] 
+    [SerializeField]
     private CharacterController controller;
-    [SerializeField] 
+    [SerializeField]
     private Transform cam;
-    [SerializeField] 
+    [SerializeField]
     private float speed = 6f;
-    [SerializeField] 
+    [SerializeField]
     private float jumpVelocity = 2.0f;
-    [SerializeField] 
+    [SerializeField]
     private float jumpHeight = 2.0f;
-    [SerializeField] 
+    [SerializeField]
     private float g = 4 * 9.81f;
-    
-    #endregion
 
+    #endregion
+    private Animator playerAnimator;
+    private bool isJump;
+    private bool Ground;
     #region fields
 
     private readonly float turnSmoothTime = 0.1f;
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
         GameEvents.Instance.onEnemyHeadTriggerEnter += PlayerBounce;
+        playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -56,6 +59,11 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             var moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            playerAnimator.SetBool("run", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("run", false);
         }
     }
 
@@ -67,6 +75,13 @@ public class PlayerController : MonoBehaviour
             {
                 groundedTimer = 0;
                 jumpVelocity += Mathf.Sqrt(jumpHeight * 2 * g);
+                playerAnimator.SetBool("isJumping", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("isJumping", false);
+
+
             }
 
         controller.Move(new Vector3(0f, jumpVelocity * Time.deltaTime, 0f));
@@ -74,14 +89,28 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerBounce()
     {
-        rb.AddForce(1000f*transform.up, ForceMode.Force);
+        rb.AddForce(1000f * transform.up, ForceMode.Force);
     }
     private void GroundCheck()
     {
         var groundedPlayer = controller.isGrounded;
         if (groundedPlayer) groundedTimer = 0.2f;
-        if (groundedTimer > 0) groundedTimer -= Time.deltaTime;
 
-        if (groundedPlayer && jumpVelocity < 0) jumpVelocity = 0f;
+        if (groundedTimer > 0) groundedTimer -= Time.deltaTime;
+        {
+            playerAnimator.SetBool("Ground", true);
+            playerAnimator.SetBool("Float", false);
+            playerAnimator.SetBool("isJumping", false);
+
+
+        }
+        if (groundedPlayer && jumpVelocity < 0) jumpVelocity = 2f;
+        
+        if (jumpVelocity >2f) 
+        {
+            playerAnimator.SetBool("Float", true);
+        }
+
+
     }
 }
