@@ -21,13 +21,12 @@ Nie dotykaj narkotyków bo cię kur[]a zmiotą z planszy
 + Menu główne (w paru grach jest, więc w naszej też będzie)
 + Realistyczne modele postaci (osadzone w pewnych stylu graficznym)
 + Dźwięk w tle (melodie napisaną przez sławnego gruźlika)
++ Animacje postaci
++ Menu po śmierci (gdyby to jednak on się z nami rozprawił...)
 
 ### W grze niedługo pojawi się:
 + System walki (teraz będziemy mogli się rozprawić z naszym wrogiem za ciągłe gonienie)
-+ Menu po śmierci (gdyby to jednak on się z nami rozprawił...)
-+ Tabela z wynikami
 + Świat pełen przepięknych widoków (dobrze, że piękno jest subiektywne)
-+ Animacje postaci
 + Budka do teleportacji (lepsza niż w Doktor Who)
 + Mnóstwo przedmiotów
 + Wiele dźwięków wszystkiego
