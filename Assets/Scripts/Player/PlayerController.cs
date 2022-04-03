@@ -61,10 +61,7 @@ public class PlayerController : MonoBehaviour
             var moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
             playerAnimator.SetBool("run", true);
-            if (audioSource != null)
-            {
-                audioSource.PlayOneShot(audioClip);
-            }
+            
         }
         else
         {

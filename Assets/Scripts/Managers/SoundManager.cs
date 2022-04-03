@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource effectsSource;
+    [SerializeField] private AudioDataSO audioDataBase;
 
     [Serializable]
     public struct Clips
@@ -32,20 +33,14 @@ public class SoundManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
+            
         }
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
     }
-
-    public void Play (string name)
-    {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        s.source.Play();
-    }
+    
     private void Start()
     {
         foreach (var clip in audioClips) _audioClips[clip.name] = clip.audioClip;

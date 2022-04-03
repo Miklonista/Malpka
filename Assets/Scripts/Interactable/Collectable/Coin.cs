@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Coin : Interactable
 {
@@ -9,6 +10,7 @@ public class Coin : Interactable
     protected override void OnTrigger()
     {
         PointsManager.Instance.Points += coinData.points;
+        //SoundManager.PlaySound();
         Destroy(gameObject);
     }
 }
