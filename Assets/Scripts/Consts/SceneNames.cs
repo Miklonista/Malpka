@@ -6,3 +6,4 @@
         public static string FIRST_SCENE = "PierwszaScena";
         public static string MENU_SCENE = "Menu";
     }
+///
