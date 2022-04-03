@@ -13,6 +13,9 @@
 ### Nasz główny antagonista - wygląda jak wygląda, bo mało śpi.
 ![image](https://user-images.githubusercontent.com/62513514/161423274-f50c75c0-726b-49dc-b56e-81ba685a8c4b.png)
 
+### Budki do teleportacji wersja budżetowa i premium.
+![image](https://user-images.githubusercontent.com/62513514/161423353-ae84840c-c4e1-4dee-93c5-a4bf8776ea2c.png)
+
 ### Nasza gra zawiera: 
 + System poruszania się postaci (można skoczyć w przepaść)
 + System punktowy (gra sama liczy punkty, nie trzeba zapisywać na kartce)
