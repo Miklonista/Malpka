@@ -2,13 +2,17 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Serialization;
 
 public class SoundManager : MonoBehaviour
 {
+    public Sound[] sounds;
+    
     public static SoundManager Instance;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource effectsSource;
+    [SerializeField] private AudioDataSO audioDataBase;
 
     [Serializable]
     public struct Clips
@@ -24,12 +28,19 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            
+        }
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
     }
-
+    
     private void Start()
     {
         foreach (var clip in audioClips) _audioClips[clip.name] = clip.audioClip;
