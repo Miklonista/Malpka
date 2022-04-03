@@ -5,12 +5,13 @@
 **Małpka** to platformówka 3D. Celen gry jest odzyskanie bananów skradzionych Małpce przez Bandę Goryli, pod drodzę czeka nas wiele wyzwań, jednak Małpce bardzo zależy, więc nie poddawajcie się, rozprawcie się z Gorylami i zbierzcie jak najwięcej bananów *fabuła może ulec zmianie, gdyż lore jest intensywnie rozbudowywane.*
 
 ### Menu główne - dzięki, któremu możemy przenieść się w do Krainy Małp.
-![image](https://user-images.githubusercontent.com/62513514/155392906-21f9083f-0244-441f-8cae-f9e5d28d903f.png)
+![image](https://user-images.githubusercontent.com/62513514/161423056-f054fabf-0274-40de-95d1-7942e6368980.png)
 
-### Kadr z gry. Na zdjęciu tytułowa Małpka (mała z tyłu) i Goryl (większy z przodu - przez to, że brał srogie piguły wygląda jak wygląda).
-![image](https://user-images.githubusercontent.com/62513514/159112280-fa3778b3-788c-4a03-8e0a-dea3244e7c46.png)
+### Rzadkie zdjęcie przedstawiające małpę w swoim naturalnym środowisku całkowicie nieświadomą nadciągajacego zagrożenia.
+![image](https://user-images.githubusercontent.com/62513514/161423206-a5560884-b6b7-4cd5-8ecb-8d7f8f5b3f0c.png)
 
-Nie dotykaj narkotyków bo cię kur[]a zmiotą z planszy
+### Nasz główny antagonista - wygląda jak wygląda, bo mało śpi.
+![image](https://user-images.githubusercontent.com/62513514/161423274-f50c75c0-726b-49dc-b56e-81ba685a8c4b.png)
 
 ### Nasza gra zawiera: 
 + System poruszania się postaci (można skoczyć w przepaść)
@@ -23,14 +24,13 @@ Nie dotykaj narkotyków bo cię kur[]a zmiotą z planszy
 + Dźwięk w tle (melodie napisaną przez sławnego gruźlika)
 + Animacje postaci
 + Menu po śmierci (gdyby to jednak on się z nami rozprawił...)
++ + Budka do teleportacji (lepsza niż w Doktor Who)
++ + Wiele dźwięków wszystkiego
 
 ### W grze niedługo pojawi się:
 + System walki (teraz będziemy mogli się rozprawić z naszym wrogiem za ciągłe gonienie)
 + Świat pełen przepięknych widoków (dobrze, że piękno jest subiektywne)
-+ Budka do teleportacji (lepsza niż w Doktor Who)
 + Mnóstwo przedmiotów
-+ Wiele dźwięków wszystkiego
-
 
 ### Tak prezentuje się gra na dzień dzisiejszy (powoli zaczyna zmieniać się w horror):
   
