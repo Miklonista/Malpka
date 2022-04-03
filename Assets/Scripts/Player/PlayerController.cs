@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
                 groundedTimer = 0;
                 jumpVelocity += Mathf.Sqrt(jumpHeight * 2 * g);
                 playerAnimator.SetBool("isJumping", true);
+
             }
             else
             {
@@ -104,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        if (groundedPlayer && jumpVelocity < 0) jumpVelocity = 2f;
+        if (groundedPlayer && jumpVelocity < 0) jumpVelocity = 1;
         
         if (jumpVelocity >2f) 
         {
