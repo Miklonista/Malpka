@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Serialization;
-
+    ...
 public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
