@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 269183055316889369}
   - component: {fileID: -7946246783477224316}
+  - component: {fileID: 7993164102857694148}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -120,8 +121,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8595654310459492325}
   m_LocalRotation: {x: 0, y: 0.01745245, z: 0, w: 0.99984777}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 7479286754870922394}
   m_Father: {fileID: 0}
@@ -168,3 +169,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7993164102857694148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595654310459492325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ca82da76afc3d458991c59e0862237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
