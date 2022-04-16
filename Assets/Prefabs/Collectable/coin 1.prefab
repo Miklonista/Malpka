@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f42505a63ca7e4e9a40d4a362bc44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 371c7554d1d165146a79898daa807134, type: 3}
   coinData: {fileID: 11400000, guid: 36b5fc5a57a0df14190c55dd2d5a6d07, type: 2}
 --- !u!114 &1141927216020108086
 MonoBehaviour:
