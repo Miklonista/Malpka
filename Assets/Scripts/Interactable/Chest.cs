@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -7,12 +8,15 @@ using Random = System.Random;
 public class Chest : Interactable
 {
     [SerializeField] private ItemListSO itemList;
+    //[SerializeField] private AudioClip _clip;
 
     private Random random = new Random();
-    protected override void OnTrigger()
+
+   protected override void OnTrigger()
     {
         spawnItem();
         Destroy(gameObject);
+      //  SoundManager.Instance.PlaySound(_clip);
     }
 
     private void spawnItem()

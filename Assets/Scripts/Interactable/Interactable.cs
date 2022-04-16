@@ -3,10 +3,13 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] private AudioClip _clip;
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
         OnTrigger();
+        SoundManager.Instance.PlaySound(_clip);
+
     }
 
     protected virtual void OnTrigger()
@@ -23,5 +26,5 @@ public abstract class Interactable : MonoBehaviour
     protected virtual void OnCollide()
     {
         Debug.Log($"OnCollisionEnter has not been implemented in {gameObject.name}");
-    }
+   }
 }

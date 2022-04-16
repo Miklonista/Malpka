@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8d2efda15b45979b597c0dc202d05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 623ad07c146cedd4db6b902fd1612618, type: 3}
   bananaData: {fileID: 11400000, guid: 610897f39acf0314fa321b84b5ea45df, type: 2}
 --- !u!136 &4258619585641862984
 CapsuleCollider:
