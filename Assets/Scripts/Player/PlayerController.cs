@@ -80,12 +80,12 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isJumping", true);
 
             }
-            else
+            /*else
             {
                 playerAnimator.SetBool("isJumping", false);
 
 
-            }
+            }*/
 
         controller.Move(new Vector3(0f, jumpVelocity * Time.deltaTime, 0f));
     }
@@ -99,8 +99,9 @@ public class PlayerController : MonoBehaviour
         var groundedPlayer = controller.isGrounded;
         if (groundedPlayer) groundedTimer = 0.2f;
 
-        if (groundedTimer > 0) groundedTimer -= Time.deltaTime;
+        if (groundedTimer > 0) 
         {
+            groundedTimer -= Time.deltaTime;
             playerAnimator.SetBool("Ground", true);
             playerAnimator.SetBool("Float", false);
             playerAnimator.SetBool("isJumping", false);
