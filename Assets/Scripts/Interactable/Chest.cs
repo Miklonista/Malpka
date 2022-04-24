@@ -12,9 +12,15 @@ public class Chest : Interactable
     private Random random = new Random();
     private ParticleSystem explosionParticle;
 
+    private void Start()
+    {
+        explosionParticle = transform.parent.GetComponentInChildren<ParticleSystem>();
+
+    }
+
     protected override void OnTrigger()
     {
-        //explosionParticle.Play();
+        explosionParticle.Play();
         spawnItem();
         Destroy(gameObject);
     } 
