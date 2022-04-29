@@ -20,7 +20,6 @@ public class EnemyController : MonoBehaviour
         target = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
-        GameEvents.Instance.onEnemyHeadTriggerEnter += StunEnemy;
     }
     
     private void Update()

@@ -18,25 +18,23 @@ public class PlayerController : MonoBehaviour
     private float g = 4 * 9.81f;
 
     #endregion
-    private Animator playerAnimator;
-    private bool isJump;
-    private bool Ground;
+
     #region fields
 
+    private Animator playerAnimator;
+    private Rigidbody rb;
     private readonly float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     private float groundedTimer;
-    private Rigidbody rb;
+    
     #endregion
 
-    public AudioSource audioSource;
-    public AudioClip audioClip;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        rb = GetComponent<Rigidbody>();
-        GameEvents.Instance.onEnemyHeadTriggerEnter += PlayerBounce;
+        rb = GetComponentInParent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
+        PlayerBounce();
     }
 
     private void Update()
@@ -92,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerBounce()
     {
-        rb.AddForce(1000f * transform.up, ForceMode.Force);
+        rb.AddForce(100000f * transform.up);
     }
     private void GroundCheck()
     {

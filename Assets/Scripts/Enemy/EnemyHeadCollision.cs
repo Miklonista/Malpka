@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class EnemyHeadCollision : Interactable
 {
-    protected override void OnTriggerEnter(Collider other)
+    protected override void OnCollisionEnter(Collision collision)
     {
-        if(!other.CompareTag("PlayerFeet")) return;
-        GameEvents.Instance.EnemyHeadTriggerEnter();
+        Debug.Log(collision.collider.tag);
+        if (!collision.collider.CompareTag("PlayerFeet")) return;
+        
+        GameEvents.Instance.OnEnemyHeadHit();
     }
-
 }

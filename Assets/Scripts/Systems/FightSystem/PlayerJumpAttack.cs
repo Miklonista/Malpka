@@ -13,12 +13,12 @@ public class PlayerJumpAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEvents.Instance.onEnemyHeadTriggerEnter += BounceOff;
+        GameEvents.Instance.onEnemyHeadHitEnter += BounceOff;
     }
 
     private void OnDisable()
     {
-        GameEvents.Instance.onEnemyHeadTriggerEnter -= BounceOff;
+        GameEvents.Instance.onEnemyHeadHitEnter -= BounceOff;
     }
 
     public void BounceOff()
