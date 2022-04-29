@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
     private Transform target; // czy player jest w terenie
     private NavMeshAgent agent;
-
+    
     private void Start()
     {
         animator = GetComponent<Animator>();

@@ -15,7 +15,6 @@ public class Chest : Interactable
     {
         spawnItem();
         Destroy(gameObject);
-        
     }
 
     private void spawnItem()
