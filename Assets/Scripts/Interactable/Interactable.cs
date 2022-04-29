@@ -9,7 +9,6 @@ public abstract class Interactable : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         OnTrigger();
         SoundManager.Instance.PlaySound(_clip);
-
     }
 
     protected virtual void OnTrigger()

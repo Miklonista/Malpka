@@ -11,7 +11,7 @@ public class GameEvents : MonoBehaviour
     public event Action onTeleportTriggerEnter;
     public event Action onPlayerApproach;
     public event Action onEnemyHeadTriggerEnter;
-    
+
     #endregion
     
     private void Awake()
