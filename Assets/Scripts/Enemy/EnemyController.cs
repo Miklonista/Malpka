@@ -20,9 +20,8 @@ public class EnemyController : MonoBehaviour
         target = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
-        GameEvents.Instance.onEnemyHeadTriggerEnter += OnEnemyStunned;
     }
-
+    
     private void Update()
     {
         var distance = Vector3.Distance(target.position, transform.position);
@@ -48,7 +47,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnEnemyStunned()
+    private void StunEnemy()
     {
         StartCoroutine(Stun());
     }
