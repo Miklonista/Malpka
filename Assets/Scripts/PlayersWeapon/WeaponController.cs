@@ -1,24 +1,67 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    [SerializeField] private GameObject bananaWeapon;
+    [SerializeField] 
+    private GameObject bananaWeapon;
+    [SerializeField] 
+    private float speedMultiplier = 0.1f;
 
-    private bool isAbleToFire = true;
-    private void Update()
+    private Vector3 startPos;
+    private bool canShoot = true;
+    private float currentFlightTimer = 0f;
+    private float flightTime = 0.2f;
+
+    private void Start()
     {
-        if (!isAbleToFire) return;
+        startPos = transform.position;
+    }
 
-        if (Input.GetKey(KeyCode.Q))
+    private async void Update()
+    {
+        if (!canShoot) return;
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            Throw();
+            currentFlightTimer = flightTime;
+            canShoot = false;
+            await Throw();
+            if (Throw().IsCompleted)
+            {
+               await Comeback(); 
+            }
         }
     }
 
-    private void Throw()
+    private void FixedUpdate()
     {
-        //tu bedzie DOTween
-        //bananaWeapon.transform.position = Vector3.Lerp(transform.forward, Vector3*(transform.position * transform.forward) * 10f, 1);
+        if (currentFlightTimer > 0)
+        {
+            currentFlightTimer -= Time.fixedDeltaTime;
+        }
+    }
+
+    private async Task Throw()
+    {
+        var dir = transform.forward;
+        speedMultiplier = Mathf.Abs(speedMultiplier);
+        while (currentFlightTimer > 0)
+        {
+            bananaWeapon.transform.Translate(speedMultiplier * dir, Space.World);
+            await Task.Yield();
+        }
+    }
+
+    private async Task Comeback()
+    {
+        currentFlightTimer = flightTime;
+        while (currentFlightTimer > 0)
+        {
+            var dir = (transform.position - bananaWeapon.transform.position).normalized;
+            bananaWeapon.transform.Translate(speedMultiplier * dir, Space.World);
+            await Task.Yield();
+        }
+        canShoot = true;
     }
 }
