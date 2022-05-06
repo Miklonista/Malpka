@@ -8,22 +8,18 @@ public class WeaponController : MonoBehaviour
     private GameObject bananaWeapon;
     [SerializeField] 
     private float speedMultiplier = 0.1f;
-
-    private Vector3 startPos;
+    [SerializeField]
+    private float flightTime = 0.2f;
+    
     private bool canShoot = true;
     private float currentFlightTimer = 0f;
-    private float flightTime = 0.2f;
-
-    private void Start()
-    {
-        startPos = transform.position;
-    }
-
+    
     private async void Update()
     {
         if (!canShoot) return;
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            bananaWeapon.SetActive(true);
             currentFlightTimer = flightTime;
             canShoot = false;
             await Throw();
@@ -62,6 +58,7 @@ public class WeaponController : MonoBehaviour
             bananaWeapon.transform.Translate(speedMultiplier * dir, Space.World);
             await Task.Yield();
         }
+        bananaWeapon.SetActive(false);
         canShoot = true;
     }
 }
