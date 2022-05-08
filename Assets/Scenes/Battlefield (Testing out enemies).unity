@@ -378,11 +378,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9106244694986495443, guid: 9313dd5e68f0210409c85d895a0c0173, type: 3}
   m_PrefabInstance: {fileID: 343191030}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &388085068 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 543450652119692989, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
-  m_PrefabInstance: {fileID: 715543980}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &410032856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,7 +440,7 @@ PrefabInstance:
     - target: {fileID: 4396231042414770191, guid: d1e9e1d0ef5c2d446bfd317997975314, type: 3}
       propertyPath: pointsTMP
       value: 
-      objectReference: {fileID: 437500735}
+      objectReference: {fileID: 0}
     - target: {fileID: 4396231042414770191, guid: d1e9e1d0ef5c2d446bfd317997975314, type: 3}
       propertyPath: starPointsTMP
       value: 
@@ -668,15 +663,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &437500735 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 384140876, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
-  m_PrefabInstance: {fileID: 437500733}
+--- !u!1 &592049320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 130279761581155091, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
+  m_PrefabInstance: {fileID: 1286187356}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &592049321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592049320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: d32b22dacc18c3840bd5ae4e4a6d658c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &627013167
@@ -837,6 +838,10 @@ PrefabInstance:
       propertyPath: hpBarImage
       value: 
       objectReference: {fileID: 2074864102}
+    - target: {fileID: 543450652119692989, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 543450652119692989, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.89
@@ -1237,11 +1242,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 388085068}
+    m_TransformParent: {fileID: 715543981}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
       propertyPath: m_LocalScale.x
@@ -1295,13 +1300,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 405388463088511062, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 438555f1381903448a7ab5e552ca2bbc, type: 2}
     - target: {fileID: 919132149155446097, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
       propertyPath: m_Name
       value: BananaWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857527733885504385, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
@@ -1335,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bananaWeapon: {fileID: 1552490065}
-  speedMultiplier: 0.2
+  speedMultiplier: 1
   flightTime: 0.2
 --- !u!4 &1286196225
 Transform:
@@ -1348,8 +1361,8 @@ Transform:
   m_LocalPosition: {x: 0.20056008, y: 2.16, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 388085068}
-  m_RootOrder: 3
+  m_Father: {fileID: 715543981}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1394797091
 PrefabInstance:
