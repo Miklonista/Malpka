@@ -13,9 +13,6 @@ public class PlayerHealth : HealthSystem
         { 
             base.HP = value;
             hpBarImage.fillAmount = (HP / maxHP);
-           /* Debug.Log(HP);
-            Debug.Log(cooldown.fillAmount);
-            Debug.Log(maxHP);*/
         }
 
     }
@@ -27,6 +24,5 @@ public class PlayerHealth : HealthSystem
     {
         Debug.Log("œmieræ");
         GameManager.Instance.EnableDeathScreen();
-
     }
 }
