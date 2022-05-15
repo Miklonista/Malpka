@@ -7,9 +7,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] 
     private GameObject bananaWeapon;
     [SerializeField] 
-    private float speedMultiplier = 0.1f;
+    private float speedMultiplier;
     [SerializeField]
-    private float flightTime = 0.2f;
+    private float flightTime;
     
     private bool canShoot = true;
     private float currentFlightTimer = 0f;
@@ -41,7 +41,6 @@ public class WeaponController : MonoBehaviour
     private async Task Throw()
     {
         var dir = transform.forward;
-        speedMultiplier = Mathf.Abs(speedMultiplier);
         while (currentFlightTimer > 0)
         {
             bananaWeapon.transform.Translate(speedMultiplier * dir, Space.World);
