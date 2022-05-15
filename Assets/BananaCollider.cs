@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BananaCollider : MonoBehaviour
+public class BananaCollider : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  protected override void OnTriggerEnter(Collider other)
+  {
+    if (!other.CompareTag("Enemy")) return;
+    
+    other.gameObject.GetComponent<HealthSystem>().TakeDamage(15);
+  }
 }

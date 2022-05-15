@@ -699,6 +699,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8831442952837929112, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
+--- !u!114 &592049326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592049320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428c64e3007514842ac812f04e949099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotation: {x: 100, y: 100, z: 100}
+  _speed: 2
 --- !u!1 &627013167
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +871,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1307081137, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6d9f50ba9f841be49a8503639d322dd0, type: 2}
+    - target: {fileID: 1749982196, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
+      propertyPath: maxHP
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1749982196, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
       propertyPath: hpBarImage
       value: 
@@ -933,8 +955,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.16
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1307081137, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6fb80bb020a99a4faa864d236246259, type: 3}
 --- !u!4 &715543981 stripped
 Transform:
@@ -954,9 +975,11 @@ GameObject:
   - component: {fileID: 1007880803}
   - component: {fileID: 1007880802}
   - component: {fileID: 1007880801}
+  - component: {fileID: 1007880806}
+  - component: {fileID: 1007880807}
   m_Layer: 0
   m_Name: Enemy_CLOSE_RANGE
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -975,7 +998,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 118
   m_CollisionDetection: 1
 --- !u!135 &1007880802
 SphereCollider:
@@ -984,7 +1007,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007880800}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6d9f50ba9f841be49a8503639d322dd0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1053,6 +1076,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1007880806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007880800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cdf171a78eb254d9f93d35a4cb88e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1007880807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007880800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cc986f23914ee8b8ab59fd5b6d8a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  hpBarImage: {fileID: 0}
 --- !u!1001 &1014150128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1334,7 +1383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857527733885504385, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.2
       objectReference: {fileID: 0}
     - target: {fileID: 3857527733885504385, guid: fee1c2b2faac57546bd4a4889b4965c9, type: 3}
       propertyPath: m_LocalPosition.z

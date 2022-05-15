@@ -1,20 +1,33 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class HealthSystem : MonoBehaviour
 {
     [SerializeField] 
     protected float maxHP = 100;
 
-    protected virtual float HP { get; set; }
-       
+    [SerializeField]
+    private Image hpBarImage;
+
+    private float hp;
+    protected virtual float HP 
+    { 
+        get => hp;
+        set 
+        { 
+            hp = value;
+            hpBarImage.fillAmount = (hp / maxHP);
+        }
+    }
+    
     private void Start()
     {
         HP = maxHP;
     }
-
     public virtual void TakeDamage(int dmgValue)
     {
+        Debug.Log(gameObject.name);
         HP -= dmgValue;
         Debug.Log(HP);
         if (HP <= 0)
@@ -22,7 +35,6 @@ public abstract class HealthSystem : MonoBehaviour
            Die();
         }
     }
-
     public virtual void Heal(int HealValue)
     {
         HP += HealValue;
