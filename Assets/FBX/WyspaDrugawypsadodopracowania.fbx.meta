@@ -1,24 +1,14 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/FBX/WyspaDrugawypsadodopracowania.fbx.meta
 guid: 07e395bd983f1a749ae19bac42f743b3
-=======
-guid: 87ee870da8c89f745b798753c2ba2b1a
->>>>>>> Stashed changes:Assets/Prefabs/moneta.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
-<<<<<<< Updated upstream:Assets/FBX/WyspaDrugawypsadodopracowania.fbx.meta
     materialName: 0
     materialSearch: 1
     materialLocation: 1
-=======
-    materialName: 1
-    materialSearch: 2
-    materialLocation: 0
->>>>>>> Stashed changes:Assets/Prefabs/moneta.fbx.meta
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -32,7 +22,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -83,7 +73,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -102,7 +92,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
