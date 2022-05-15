@@ -6,21 +6,7 @@ public abstract class HealthSystem : MonoBehaviour
 {
     [SerializeField] 
     protected float maxHP = 100;
-
-    [SerializeField]
-    private Image hpBarImage;
-
-    private float hp;
-    protected virtual float HP 
-    { 
-        get => hp;
-        set 
-        { 
-            hp = value;
-            hpBarImage.fillAmount = (hp / maxHP);
-        }
-    }
-    
+    protected virtual float HP { get; set; }
     private void Start()
     {
         HP = maxHP;
@@ -35,9 +21,9 @@ public abstract class HealthSystem : MonoBehaviour
            Die();
         }
     }
-    public virtual void Heal(int HealValue)
+    public virtual void Heal(int healValue)
     {
-        HP += HealValue;
+        HP += healValue;
         if (HP > maxHP) HP = maxHP;
         Debug.Log(HP);
         

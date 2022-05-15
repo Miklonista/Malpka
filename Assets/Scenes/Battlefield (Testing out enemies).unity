@@ -611,6 +611,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3484109237528007316, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
+      propertyPath: m_FlexibleHeight
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 3484109237528007317, guid: 007b6da999e9b1d4996a490b7cbb4140, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -998,7 +1002,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!135 &1007880802
 SphereCollider:
@@ -1070,7 +1074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007880800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 3.37, z: -9.69}
+  m_LocalPosition: {x: -0.06, y: 1.43, z: -9.69}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1101,7 +1105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  hpBarImage: {fileID: 0}
 --- !u!1001 &1014150128
 PrefabInstance:
   m_ObjectHideFlags: 0
