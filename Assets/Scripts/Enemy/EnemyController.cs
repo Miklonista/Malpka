@@ -1,68 +1,104 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
-    private float lookRadius = 30f;
+    #region old version
 
-    [SerializeField]
-    private float speed = 12f;
+    /*[SerializeField]
+        private float lookRadius = 30f;
     
-    private Animator animator;
-    private Transform target; // czy player jest w terenie
-    private NavMeshAgent agent;
+        [SerializeField]
+        private float speed = 12f;
+        
+        private Animator animator;
+        private Transform target; // czy player jest w terenie
+        private NavMeshAgent agent;
+        
+        private void Start()
+        {
+            animator = GetComponent<Animator>();
+            target = GameObject.Find("Player").transform;
+            agent = GetComponent<NavMeshAgent>();
+            agent.speed = speed;
+        }
+        
+        private void Update()
+        {
+            var distance = Vector3.Distance(target.position, transform.position);
     
+    
+            if (distance <= lookRadius)
+            {
+                agent.SetDestination(target.position);
+                animator.SetBool("Aware", true);
+    
+                if (distance <= agent.stoppingDistance) FaceTarget();
+            }
+            else
+            {
+                animator.SetBool("Aware", false);
+            }
+    
+            void FaceTarget() // obracanie sie na przeciwnika
+            {
+                var direction = target.position - transform.position;
+                var LookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                transform.rotation = LookRotation;
+            }
+        }
+    
+        private void StunEnemy()
+        {
+            StartCoroutine(Stun());
+        }
+    
+        IEnumerator Stun()
+        {
+            agent.speed = 0f;
+            animator.SetBool("Aware", false);
+            yield return new WaitForSeconds(2f);
+            agent.speed = this.speed;
+            animator.SetBool("Aware", true);
+        }
+        private void OnDrawGizmosSelected() //Czerwona obr�cz
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, lookRadius);
+        }*/
+
+    #endregion
+
+    [SerializeField] 
+    private Transform playerTransform;
+    [SerializeField] 
+    private float movementSpeed;
+    
+    private Rigidbody rb;
+
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        target = GameObject.Find("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
+        rb = GetComponent<Rigidbody>();
     }
     
+    private void FixedUpdate()
+    {
+        if (Vector3.Distance(playerTransform.position, transform.position) > 15f) return;
+
+        MoveTowardsPlayer();
+    }
+
     private void Update()
     {
-        var distance = Vector3.Distance(target.position, transform.position);
-
-
-        if (distance <= lookRadius)
-        {
-            agent.SetDestination(target.position);
-            animator.SetBool("Aware", true);
-
-            if (distance <= agent.stoppingDistance) FaceTarget();
-        }
-        else
-        {
-            animator.SetBool("Aware", false);
-        }
-
-        void FaceTarget() // obracanie sie na przeciwnika
-        {
-            var direction = target.position - transform.position;
-            var LookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = LookRotation;
-        }
+        Debug.Log(Vector3.Distance(playerTransform.position, transform.position));
     }
 
-    private void StunEnemy()
+    private void MoveTowardsPlayer()
     {
-        StartCoroutine(Stun());
-    }
-
-    IEnumerator Stun()
-    {
-        agent.speed = 0f;
-        animator.SetBool("Aware", false);
-        yield return new WaitForSeconds(2f);
-        agent.speed = this.speed;
-        animator.SetBool("Aware", true);
-    }
-    private void OnDrawGizmosSelected() //Czerwona obr�cz
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Debug.Log("is moving");
+        var dir = movementSpeed * Vector3.Normalize(playerTransform.position - transform.position);
+        rb.velocity = new Vector3(dir.x, rb.velocity.y, dir.z);
     }
 }
