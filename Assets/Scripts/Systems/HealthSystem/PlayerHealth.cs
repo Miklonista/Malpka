@@ -7,7 +7,7 @@ public class PlayerHealth : HealthSystem
     private Image hpBarImage;
     
     private float hp;
-    protected virtual float HP 
+    protected override float HP 
     { 
         get => hp;
         set 
@@ -16,6 +16,7 @@ public class PlayerHealth : HealthSystem
             hpBarImage.fillAmount = (hp / maxHP);
         }
     }
+    
     protected override void Die()
     {
         Debug.Log("œmieræ");

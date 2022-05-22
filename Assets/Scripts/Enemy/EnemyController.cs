@@ -74,6 +74,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] 
     private Transform playerTransform;
     [SerializeField] 
+    private EnemyStatsSO enemyData;
+
+    private float attackRange;
     private float movementSpeed;
     
     private Rigidbody rb;
@@ -81,23 +84,19 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        movementSpeed = enemyData.movementSpeed;
+        attackRange = enemyData.attackRange;
     }
     
     private void FixedUpdate()
     {
-        if (Vector3.Distance(playerTransform.position, transform.position) > 15f) return;
+        if (Vector3.Distance(playerTransform.position, transform.position) > attackRange) return;
 
         MoveTowardsPlayer();
     }
-
-    private void Update()
-    {
-        Debug.Log(Vector3.Distance(playerTransform.position, transform.position));
-    }
-
+    
     private void MoveTowardsPlayer()
     {
-        Debug.Log("is moving");
         var dir = movementSpeed * Vector3.Normalize(playerTransform.position - transform.position);
         rb.velocity = new Vector3(dir.x, rb.velocity.y, dir.z);
     }
