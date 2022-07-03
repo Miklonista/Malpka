@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public abstract class EnemyControllerBase : MonoBehaviour
 {
     #region old version
 
@@ -72,32 +72,28 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     [SerializeField] 
-    private Transform playerTransform;
+    protected Transform playerTransform;
     [SerializeField] 
     private EnemyStatsSO enemyData;
 
-    private float attackRange;
-    private float movementSpeed;
+    protected float focusRange;
+    protected float movementSpeed;
     
-    private Rigidbody rb;
+    protected Rigidbody rb;
 
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         movementSpeed = enemyData.movementSpeed;
-        attackRange = enemyData.attackRange;
+        focusRange = enemyData.attackRange;
     }
     
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (Vector3.Distance(playerTransform.position, transform.position) > attackRange) return;
+        if (Vector3.Distance(playerTransform.position, transform.position) > focusRange) return;
 
         MoveTowardsPlayer();
     }
-    
-    private void MoveTowardsPlayer()
-    {
-        var dir = movementSpeed * Vector3.Normalize(playerTransform.position - transform.position);
-        rb.velocity = new Vector3(dir.x, rb.velocity.y, dir.z);
-    }
+
+    protected abstract void MoveTowardsPlayer();
 }
