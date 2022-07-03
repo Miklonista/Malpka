@@ -1,14 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.ComponentModel;
+using Unity.Collections;
 using UnityEngine;
 
 public class RangedEnemyController : EnemyControllerBase
 {
-    [SerializeField] private float attackRange;
-    [SerializeField] private float attackSpeed;
-    [SerializeField] private GameObject bulletPrefab;
+    #region sfields
 
-    private bool canShoot = true;
+        [SerializeField] private float attackRange;
+        [SerializeField] private float attackSpeed; 
+        [SerializeField] private float attackTimer;
+        [SerializeField] private GameObject bulletPrefab;
+
+    #endregion
+
+    #region fields
+
+    private int counter = 0;
+
+    #endregion
     
+
+    private void Update()
+    {
+        Debug.Log(attackTimer);
+        if (attackTimer > 0f)
+        {
+            attackTimer -= Time.fixedDeltaTime;
+        }
+    }
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -20,19 +42,20 @@ public class RangedEnemyController : EnemyControllerBase
         rb.velocity = movementSpeed * new Vector3(dir.x, rb.velocity.y, dir.z);
         if (Vector3.Distance(playerTransform.position, transform.position) > attackRange) return;
         rb.velocity = Vector3.zero;
-        if (!canShoot) return;
-        StartCoroutine(PerformAttack());
+        if (attackTimer > 0) return;
+        SpawnBullet();
     }
 
-    private IEnumerator PerformAttack()
+    private void SpawnBullet()
     {
+        counter++;
+        attackTimer = 1.0f / attackSpeed;
         var targetPos = playerTransform.position;
         var dir = Vector3.Normalize(targetPos - transform.position);
-        canShoot = false;
         GameObject go = Instantiate(bulletPrefab);
         go.transform.position = transform.position;
         go.transform.rotation = transform.rotation;
-
-        yield return null;
+        var bullet = go.AddComponent<RangedEnemyBullet>();
+        StartCoroutine(bullet.Shoot(targetPos));
     }
 }
