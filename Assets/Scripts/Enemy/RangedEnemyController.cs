@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class RangedEnemyController : EnemyControllerBase
 {
     [SerializeField] private float attackRange;
+    [SerializeField] private float attackSpeed;
+    [SerializeField] private GameObject bulletPrefab;
 
     private bool canShoot = true;
     
@@ -13,9 +16,23 @@ public class RangedEnemyController : EnemyControllerBase
                 
     protected override void MoveTowardsPlayer()
     {
-        var dir = movementSpeed * Vector3.Normalize(playerTransform.position - transform.position);
-        rb.velocity = new Vector3(dir.x, rb.velocity.y, dir.z);
+        var dir = Vector3.Normalize(playerTransform.position - transform.position);
+        rb.velocity = movementSpeed * new Vector3(dir.x, rb.velocity.y, dir.z);
         if (Vector3.Distance(playerTransform.position, transform.position) > attackRange) return;
         rb.velocity = Vector3.zero;
+        if (!canShoot) return;
+        StartCoroutine(PerformAttack());
+    }
+
+    private IEnumerator PerformAttack()
+    {
+        var targetPos = playerTransform.position;
+        var dir = Vector3.Normalize(targetPos - transform.position);
+        canShoot = false;
+        GameObject go = Instantiate(bulletPrefab);
+        go.transform.position = transform.position;
+        go.transform.rotation = transform.rotation;
+
+        yield return null;
     }
 }
