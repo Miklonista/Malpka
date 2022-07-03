@@ -10,8 +10,8 @@ public class GameEvents : MonoBehaviour
 
     public event Action onTeleportTriggerEnter;
     public event Action onPlayerApproach;
-    public event Action onEnemyHeadTriggerEnter;
-    
+    public event Action onEnemyHeadHitEnter;
+
     #endregion
     
     private void Awake()
@@ -39,9 +39,9 @@ public class GameEvents : MonoBehaviour
 
     #endregion
 
-    public void EnemyHeadTriggerEnter()
+    public void OnEnemyHeadHit()
     {
         Debug.Log("EnemyHeadTriggerEnter");
-        onEnemyHeadTriggerEnter?.Invoke();
+        onEnemyHeadHitEnter?.Invoke();
     }
 }

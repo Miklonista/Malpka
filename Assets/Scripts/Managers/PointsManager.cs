@@ -21,7 +21,7 @@ public class PointsManager : MonoBehaviour
 
     private int starPoints = 0;
     private int points = 0;
-
+    
     #endregion
 
     #region properties

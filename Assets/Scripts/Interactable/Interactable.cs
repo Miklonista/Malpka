@@ -23,5 +23,5 @@ public abstract class Interactable : MonoBehaviour
     protected virtual void OnCollide()
     {
         Debug.Log($"OnCollisionEnter has not been implemented in {gameObject.name}");
-    }
+   }
 }

@@ -6,11 +6,11 @@ public class PortalEnter : Interactable
     [SerializeField] 
     private string sceneToLoad;
 
-    private void Start()
+    private void OnEnable()
     {
         GameEvents.Instance.onTeleportTriggerEnter += TeleportPlayer;
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         GameEvents.Instance.onTeleportTriggerEnter -= TeleportPlayer;
     }

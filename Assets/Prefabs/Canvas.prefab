@@ -110,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3484109236840941114}
   - component: {fileID: 3484109236840941116}
+  - component: {fileID: 1204395713}
   m_Layer: 5
   m_Name: HP bar
   m_TagString: Untagged
@@ -151,9 +152,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2324dee62eaacda458cde015b7448c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: {fileID: 0}
+  cooldown: {fileID: 3484109238114344289}
   coolingDown: 0
   waitTime: 30
+--- !u!114 &1204395713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484109236840941115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a67427ed0eecd4597ae5d96999b9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
 --- !u!1 &3484109236866868703
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,8 +419,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3484109237178409980}
   - component: {fileID: 3484109237178409982}
-  - component: {fileID: 3484109237178409983}
   - component: {fileID: 3484109237178409729}
+  - component: {fileID: 384140876}
   m_Layer: 5
   m_Name: Points
   m_TagString: Untagged
@@ -441,7 +455,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3484109237178409981}
   m_CullTransparentMesh: 1
---- !u!114 &3484109237178409983
+--- !u!114 &3484109237178409729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484109237178409981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: 1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!114 &384140876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -530,26 +564,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3484109237178409729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3484109237178409981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!1 &3484109237196560367
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +902,6 @@ GameObject:
   - component: {fileID: 3484109238114344286}
   - component: {fileID: 3484109238114344288}
   - component: {fileID: 3484109238114344289}
-  - component: {fileID: 3484109238114344291}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -911,7 +924,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -953,18 +966,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3484109238114344291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3484109238114344287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2324dee62eaacda458cde015b7448c42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: {fileID: 3484109238114344289}
-  coolingDown: 1
-  waitTime: 30
