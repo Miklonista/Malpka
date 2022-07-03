@@ -10,7 +10,7 @@ public class RangedEnemyController : EnemyControllerBase
     {
         base.FixedUpdate();
     }
-
+                
     protected override void MoveTowardsPlayer()
     {
         var dir = movementSpeed * Vector3.Normalize(playerTransform.position - transform.position);
