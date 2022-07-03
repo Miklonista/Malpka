@@ -949,6 +949,36 @@ Transform:
   m_Father: {fileID: 1848947697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &694024962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 694024963}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &694024963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694024962}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.57, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1326101492}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &715543980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1424,9 +1454,10 @@ MonoBehaviour:
   playerTransform: {fileID: 715543981}
   enemyData: {fileID: 11400000, guid: 4d25bb2b6f0143444ba8967a3a30ff7b, type: 2}
   attackRange: 15
-  attackSpeed: 0.1
+  attackSpeed: 1
   attackTimer: 0
   bulletPrefab: {fileID: 1003207327525294504, guid: 7adb19cfbd094204698bb5b748a10d70, type: 3}
+  firePoint: {fileID: 694024963}
 --- !u!114 &1326101486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,7 +1572,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 21.69, y: 1.43, z: -5.39}
   m_LocalScale: {x: 3, y: 3, z: 3}
-  m_Children: []
+  m_Children:
+  - {fileID: 694024963}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
