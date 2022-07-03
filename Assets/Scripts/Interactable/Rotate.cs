@@ -8,6 +8,6 @@ public class Rotate : MonoBehaviour
     [SerializeField] private float _speed;
     void FixedUpdate()
     {
-        transform.Rotate(_rotation * _speed * Time.deltaTime);
+        transform.Rotate(_rotation * (_speed * Time.deltaTime));
     }
 }
