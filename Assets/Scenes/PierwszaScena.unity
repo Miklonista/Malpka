@@ -581,8 +581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91832d8d8a86a8640994599b2ca4f7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toggleMusic: 0
-  _toggleEffects: 1
 --- !u!114 &215620256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,8 +593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91832d8d8a86a8640994599b2ca4f7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toggleMusic: 0
-  _toggleEffects: 0
 --- !u!1 &224376471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,7 +3396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ee767fbc8e70a47acf5f832cceaeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 1191208420}
 --- !u!114 &1191208420
 MonoBehaviour:
   m_ObjectHideFlags: 0
