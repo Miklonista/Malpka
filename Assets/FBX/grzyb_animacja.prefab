@@ -9,10 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 869829708735687298}
-  - component: {fileID: 6553420625811632376}
-  - component: {fileID: 835691508247649499}
-  - component: {fileID: 835691508247649498}
-  - component: {fileID: 835691508247649492}
   m_Layer: 0
   m_Name: grzyb_animacja
   m_TagString: Untagged
@@ -36,69 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6553420625811632376
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529614059808878648}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: cceead3dd62719a4880ec05a853865f5, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2f02663f8202fc243a1ef6b7dbae9aca, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &835691508247649499
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529614059808878648}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!64 &835691508247649498
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529614059808878648}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &835691508247649492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529614059808878648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86215a7274774e63bdaee5e08eb70da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
-  enemyData: {fileID: 11400000, guid: b4e9eea35b22ef24bae0b79130f5d7c5, type: 2}
 --- !u!1 &550834917580965740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,9 +1029,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5561365151559146136}
   - component: {fileID: 835691508045370871}
-  - component: {fileID: 835691508045370865}
   - component: {fileID: 835691508045370870}
   - component: {fileID: 835691508045370864}
+  - component: {fileID: 2070072295}
   m_Layer: 0
   m_Name: Armature.001
   m_TagString: Untagged
@@ -1138,22 +1071,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
---- !u!64 &835691508045370865
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5728556795017182219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!95 &835691508045370870
 Animator:
   serializedVersion: 3
@@ -1187,6 +1106,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   enemyData: {fileID: 11400000, guid: b4e9eea35b22ef24bae0b79130f5d7c5, type: 2}
+--- !u!136 &2070072295
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728556795017182219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.018527657
+  m_Height: 0.073099986
+  m_Direction: 2
+  m_Center: {x: -0.0035008022, y: -0.0029460262, z: 0.03101106}
 --- !u!1 &6100929298092769610
 GameObject:
   m_ObjectHideFlags: 0
