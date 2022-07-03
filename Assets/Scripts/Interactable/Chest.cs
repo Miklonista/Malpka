@@ -10,13 +10,24 @@ public class Chest : Interactable
     [SerializeField] private ItemListSO itemList;
     
     private Random random = new Random();
+    private ParticleSystem explosionParticle;
 
-   protected override void OnTrigger()
+    private void Start()
     {
-        spawnItem();
-        Destroy(gameObject);
+        explosionParticle = transform.parent.GetComponentInChildren<ParticleSystem>();
+
     }
 
+    protected override void OnTrigger()
+    {
+        explosionParticle.Play();
+        spawnItem();
+        Destroy(gameObject);
+    } 
+    /*protected override void OnCollisionEnter(Collision collision)
+    {
+        explosionParticle.Play();
+    }*/
     private void spawnItem()
     {
         var id = random.Next(itemList.itemList.Count);
