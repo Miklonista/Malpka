@@ -56,8 +56,6 @@ public class RangedEnemyController : EnemyControllerBase
         Debug.Log("FIRE POINT POS: " + transform.position);
         attackTimer = 1.0f / attackSpeed;
         var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        var b = firePoint;
-        var c = playerTransform;
-        StartCoroutine(bullet.GetComponent<RangedEnemyBullet>().Shoot(b.position, c.position));
+        StartCoroutine(bullet.GetComponent<RangedEnemyBullet>().Shoot(firePoint.position, playerTransform.position));
     }
 }
