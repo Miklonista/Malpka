@@ -2,6 +2,7 @@
 using System.Collections;
 using System.ComponentModel;
 using Unity.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class RangedEnemyController : EnemyControllerBase
@@ -18,7 +19,8 @@ public class RangedEnemyController : EnemyControllerBase
 
     #region fields
 
-    private int counter = 0;
+        private int counter = 0;
+        private bool canShoot = false;
 
     #endregion
     
@@ -30,7 +32,14 @@ public class RangedEnemyController : EnemyControllerBase
             attackTimer -= Time.fixedDeltaTime;
             return;
         }
-        SpawnBullet();
+        if(canShoot) SpawnBullet();
+    }
+    
+    protected override void FixedUpdate()
+    {
+        canShoot = false;
+        if (Vector3.Distance(playerTransform.position, transform.position) > focusRange) return;
+        MoveTowardsPlayer();
     }
         
     protected override void MoveTowardsPlayer()
@@ -38,18 +47,15 @@ public class RangedEnemyController : EnemyControllerBase
         var dir = Vector3.Normalize(playerTransform.position - transform.position);
         rb.velocity = movementSpeed * new Vector3(dir.x, rb.velocity.y, dir.z);
         if (Vector3.Distance(playerTransform.position, transform.position) > attackRange) return;
+        canShoot = true;
         rb.velocity = Vector3.zero;
     }
 
     private void SpawnBullet()
     {
-        counter++;
+        Debug.Log("FIRE POINT POS: " + transform.position);
         attackTimer = 1.0f / attackSpeed;
-        var targetPos = playerTransform.position;
-        var go = Instantiate(bulletPrefab);
-        go.transform.position = firePoint.position;
-        go.transform.rotation = firePoint.rotation;
-        Debug.Log(go.transform.position);
-        StartCoroutine(go.GetComponent<RangedEnemyBullet>().Shoot(targetPos));
+        var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        StartCoroutine(bullet.GetComponent<RangedEnemyBullet>().Shoot(firePoint.position, playerTransform.position));
     }
 }

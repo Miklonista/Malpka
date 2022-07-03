@@ -5,30 +5,35 @@ using UnityEngine;
 public class RangedEnemyBullet : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed;
+
+    public static int ID;
     
     private float error;
     private float startTime;
-    
+    private float distCovered = 0f;
+    private float frac = 0f;
+    private float dist = 0;
+
     private void Start()
     {
+        ID++;
         startTime = Time.time;
-        error = 0.05f;
+        error = 0.5f;
     }
 
-    public IEnumerator Shoot(Vector3 targetPos)
+    public IEnumerator Shoot(Vector3 firePoint, Vector3 targetPos)
     {
-        float distance = Vector3.Distance(targetPos, transform.position);
-        float distCovered = 0f;
-        float frac = 0f;
-        Debug.Log(frac);
-        while (Vector3.Distance(targetPos, transform.position) > error)
+        Debug.Log(ID);
+        dist = Vector3.Distance(firePoint, targetPos);
+        Debug.Log("BULLET SPAWN POS: " + transform.position);
+        while (Vector3.Distance(transform.position, targetPos) > error)
         {
             distCovered = (Time.time - startTime) * bulletSpeed;
-            frac = distCovered / distance;
-
-            transform.position = Vector3.Slerp(transform.position, targetPos, frac);
+            frac = distCovered / dist;
+            transform.position = Vector3.Slerp(firePoint, targetPos, frac);
             transform.position += new Vector3(0, 0.01f, 0);
-            yield return null;
+           // yield return new WaitForSeconds(1f);
+           yield return null;
         }
 
         Destroy(gameObject);
