@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 4c7c0448e3a2213468938515005bf099
+=======
+<<<<<<< Updated upstream:Assets/FBX/WyspaDrugawypsadodopracowania.fbx.meta
+guid: 90e540dc183eda0479330086a24f3bad
+=======
+guid: 87ee870da8c89f745b798753c2ba2b1a
+>>>>>>> Stashed changes:Assets/Prefabs/moneta.fbx.meta
+>>>>>>> Stashed changes
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
