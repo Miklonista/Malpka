@@ -75,7 +75,10 @@ public abstract class EnemyControllerBase : MonoBehaviour
     protected Transform playerTransform;
     [SerializeField] 
     private EnemyStatsSO enemyData;
-
+    
+    protected Animator animator;
+    
+    
     protected float focusRange;
     protected float movementSpeed;
     
@@ -86,6 +89,7 @@ public abstract class EnemyControllerBase : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         movementSpeed = enemyData.movementSpeed;
         focusRange = enemyData.attackRange;
+        animator = GetComponent<Animator>();
     }
     
     protected virtual void FixedUpdate()
