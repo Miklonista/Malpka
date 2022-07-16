@@ -10,7 +10,10 @@ public class GameEvents : MonoBehaviour
 
     public event Action onTeleportTriggerEnter;
     public event Action onPlayerApproach;
-    public event Action onEnemyHeadHitEnter;
+    /// <summary>
+    /// Event that's beeing invoked when player gets into shooting enemy's range
+    /// </summary>
+    public event Action onPlayerInRange;
 
     #endregion
     
@@ -39,9 +42,9 @@ public class GameEvents : MonoBehaviour
 
     #endregion
 
-    public void OnEnemyHeadHit()
+    public void InstantiateBullet()
     {
-        Debug.Log("EnemyHeadTriggerEnter");
-        onEnemyHeadHitEnter?.Invoke();
+        Debug.Log("InstantiateBullet");
+        onPlayerInRange?.Invoke();
     }
 }

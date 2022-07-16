@@ -7,7 +7,7 @@ public abstract class HealthSystem : MonoBehaviour
     [SerializeField] 
     protected float maxHP = 100;
     protected virtual float HP { get; set; }
-    private void Start()
+    protected virtual void Start()
     {
         HP = maxHP;
     }

@@ -12,7 +12,7 @@ public class RangedEnemyController : EnemyControllerBase
         [SerializeField] private float attackRange;
         [SerializeField] private float attackSpeed; 
         [SerializeField] private float attackTimer;
-        [SerializeField] private GameObject bulletPrefab;
+        [SerializeField] private RangedEnemyBullet bullet;
         [SerializeField] private Transform firePoint;
         
     #endregion
@@ -32,7 +32,12 @@ public class RangedEnemyController : EnemyControllerBase
             attackTimer -= Time.fixedDeltaTime;
             return;
         }
-        if(canShoot) SpawnBullet();
+
+        if (canShoot && !bullet.IsSent)
+        {
+            bullet.gameObject.SetActive(true);
+            GameEvents.Instance.InstantiateBullet();
+        }
     }
     
     protected override void FixedUpdate()
@@ -49,13 +54,5 @@ public class RangedEnemyController : EnemyControllerBase
         if (Vector3.Distance(playerTransform.position, transform.position) > attackRange) return;
         canShoot = true;
         rb.velocity = Vector3.zero;
-    }
-
-    private void SpawnBullet()
-    {
-        Debug.Log("FIRE POINT POS: " + transform.position);
-        attackTimer = 1.0f / attackSpeed;
-        var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        StartCoroutine(bullet.GetComponent<RangedEnemyBullet>().Shoot(firePoint.position, playerTransform.position));
     }
 }
