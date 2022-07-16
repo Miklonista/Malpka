@@ -81,6 +81,8 @@ public abstract class EnemyControllerBase : MonoBehaviour
     
     protected float focusRange;
     protected float movementSpeed;
+    private readonly float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity;
     
     protected Rigidbody rb;
 
@@ -96,8 +98,16 @@ public abstract class EnemyControllerBase : MonoBehaviour
     {
         if (Vector3.Distance(playerTransform.position, transform.position) > focusRange) return;
 
+        LookAtPlayer();
         MoveTowardsPlayer();
     }
 
+    private void LookAtPlayer()
+    {
+        var dir = (playerTransform.position - transform.position).normalized;
+        var targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+        var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+    }
     protected abstract void MoveTowardsPlayer();
 }

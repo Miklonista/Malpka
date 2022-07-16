@@ -9,7 +9,7 @@ public abstract class HealthSystem : MonoBehaviour
 
     protected Animator animator;
     protected virtual float HP { get; set; }
-    private void Start()
+    protected virtual void Start()
     {
         HP = maxHP;
         animator = GetComponent<Animator>();
