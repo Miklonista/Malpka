@@ -43,8 +43,7 @@ public class RangedEnemyController : EnemyControllerBase
     protected override void FixedUpdate()
     {
         canShoot = false;
-        if (Vector3.Distance(playerTransform.position, transform.position) > focusRange) return;
-        MoveTowardsPlayer();
+        base.FixedUpdate();
     }
         
     protected override void MoveTowardsPlayer()
