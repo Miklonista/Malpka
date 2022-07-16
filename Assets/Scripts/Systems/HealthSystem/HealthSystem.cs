@@ -13,9 +13,7 @@ public abstract class HealthSystem : MonoBehaviour
     }
     public virtual void TakeDamage(float dmgValue)
     {
-        Debug.Log(gameObject.name);
         HP -= dmgValue;
-        Debug.Log(HP);
         if (HP <= 0)
         {
            Die();
@@ -25,8 +23,6 @@ public abstract class HealthSystem : MonoBehaviour
     {
         HP += healValue;
         if (HP > maxHP) HP = maxHP;
-        Debug.Log(HP);
-        
     }
     protected abstract void Die();
 }

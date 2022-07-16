@@ -14,6 +14,7 @@ public class GameEvents : MonoBehaviour
     /// Event that's beeing invoked when player gets into shooting enemy's range
     /// </summary>
     public event Action onPlayerInRange;
+    public event Action onHeartDestroyed;
 
     #endregion
     
@@ -30,13 +31,11 @@ public class GameEvents : MonoBehaviour
 
         public void TeleportTriggerEnter()
         {
-            Debug.Log("TeleportTriggerEnter");
             onTeleportTriggerEnter?.Invoke();
         }
     
         public void PlayerApproach()
         {
-            Debug.Log("PlayerApproach");
             onPlayerApproach?.Invoke();
         }
 
@@ -44,7 +43,12 @@ public class GameEvents : MonoBehaviour
 
     public void InstantiateBullet()
     {
-        Debug.Log("InstantiateBullet");
         onPlayerInRange?.Invoke();
+    }
+
+    public void HeartDestroyed()
+    {
+        Debug.Log("HeartDestroyed()");
+        onHeartDestroyed?.Invoke();
     }
 }
