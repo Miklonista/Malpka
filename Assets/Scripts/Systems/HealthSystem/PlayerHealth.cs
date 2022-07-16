@@ -6,20 +6,17 @@ public class PlayerHealth : HealthSystem
     [SerializeField]
     private Image hpBarImage;
     
+    private float hp;
     protected override float HP 
     { 
-        get => base.HP;
+        get => hp;
         set 
         { 
-            base.HP = value;
-            hpBarImage.fillAmount = (HP / maxHP);
+            hp = value;
+            hpBarImage.fillAmount = (hp / maxHP);
         }
-
     }
-    private void Start()
-    {
-        HP = maxHP;
-    }
+    
     protected override void Die()
     {
         Debug.Log("œmieræ");
