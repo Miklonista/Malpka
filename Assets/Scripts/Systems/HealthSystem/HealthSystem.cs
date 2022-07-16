@@ -6,10 +6,13 @@ public abstract class HealthSystem : MonoBehaviour
 {
     [SerializeField] 
     protected float maxHP = 100;
+
+    protected Animator animator;
     protected virtual float HP { get; set; }
     private void Start()
     {
         HP = maxHP;
+        animator = GetComponent<Animator>();
     }
     public virtual void TakeDamage(float dmgValue)
     {
