@@ -18,8 +18,7 @@ public class Boss : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(hearts.Count);
-        
+
         if (hearts.Count != 0) return;
         Die();
     }
