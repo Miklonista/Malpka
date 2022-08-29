@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
 
     private void Update()
     {
-        SpawnMob();
+        if((int)Time.time % 4 == 0) SpawnMob();
         if (hearts.Count != 0) return;
         Die();
     }
@@ -36,8 +36,14 @@ public class Boss : MonoBehaviour
 
         if (result > 1) return;
 
-        Action spawnMelee = () => { };
-        Action spawnRanged = () => { };
+        Action spawnMelee = () =>
+        {
+            
+        };
+        Action spawnRanged = () =>
+        {
+            
+        };
 
         var func = result == 0 ? spawnMelee : spawnRanged;
         func(); // just testing ternary operator and lambda possibilities, its sick but shit
