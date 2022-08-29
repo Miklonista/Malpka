@@ -7,7 +7,10 @@ using Random = UnityEngine.Random;
 public class Boss : MonoBehaviour
 {
     [SerializeField] private List<GameObject> hearts = new List<GameObject>();
+    [SerializeField] private List<GameObject> mobsPool = new List<GameObject>();
 
+    private bool isActive = false;
+    private float time=0;
     private void OnEnable()
     {
         GameEvents.Instance.onHeartDestroyed += RemoveHeart;
@@ -17,9 +20,14 @@ public class Boss : MonoBehaviour
         GameEvents.Instance.onHeartDestroyed -= RemoveHeart;
     }
 
+    private void FixedUpdate()
+    {
+        if((time % 60f) < 0.5) SpawnMob();
+    }
+
     private void Update()
     {
-        if((int)Time.time % 4 == 0) SpawnMob();
+        time += Time.time/60f;
         if (hearts.Count != 0) return;
         Die();
     }
@@ -30,8 +38,14 @@ public class Boss : MonoBehaviour
         hearts.RemoveAt(hearts.Count - 1);
     }
 
+    private void SetActive(bool state)
+    {
+        isActive = state;
+    }
+    
     private void SpawnMob()
     {
+        Debug.Log("mob spawned");
         int result = Random.Range(0, 2); // 0 - melee, 1 - ranged
 
         if (result > 1) return;
