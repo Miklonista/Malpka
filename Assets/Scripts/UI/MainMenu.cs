@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadFirstLevel()
     {
-        SceneManager.LoadScene(SceneNames.FIRST_SCENE);
+        SceneManager.LoadScene("Jungle Level");
     }
 
     public void QuitGame()
