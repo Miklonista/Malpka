@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Void : Interactable
 {
-    protected override void OnCollide()
+    [SerializeField] private Transform spawnPoint;
+    
+    protected override void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.EnableDeathScreen();   
+        if (!other.CompareTag("Player")) return;
+        
+        Debug.Log("kurwa cipeczka");
+        SceneManager.LoadScene("Jungle Level");
     }
 }
